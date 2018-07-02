@@ -5,7 +5,7 @@ import { IQRRenderer } from "../models/IQRRenderer";
  * Factory to generate QR renderers.
  */
 export class QRRendererFactory extends FactoryBase<IQRRenderer> {
-    /* @internal */
+    /** @internal */
     private static _instance: QRRendererFactory;
 
     /**
