@@ -5,10 +5,13 @@
 
 ### Classes
 
-* [BitmapRenderer](classes/bitmaprenderer.md)
-* [BitmapRendererOptions](classes/bitmaprendereroptions.md)
 * [CanvasRenderer](classes/canvasrenderer.md)
 * [CanvasRendererOptions](classes/canvasrendereroptions.md)
+* [JPEGEncoder](classes/jpegencoder.md)
+* [JpegRenderer](classes/jpegrenderer.md)
+* [JpegRendererOptions](classes/jpegrendereroptions.md)
+* [PngRenderer](classes/pngrenderer.md)
+* [PngRendererOptions](classes/pngrendereroptions.md)
 * [QRRendererFactory](classes/qrrendererfactory.md)
 * [SvgRenderer](classes/svgrenderer.md)
 * [SvgRendererOptions](classes/svgrendereroptions.md)
@@ -19,30 +22,11 @@
 
 * [IQRRenderer](interfaces/iqrrenderer.md)
 
-### Type aliases
-
-* [BitmapType](#bitmaptype)
-
 ### Functions
 
 * [initRender](#initrender)
 
 ---
-
-## Type aliases
-
-<a id="bitmaptype"></a>
-
-###  BitmapType
-
-**ΤBitmapType**: * "png" &#124; "jpeg" &#124; "bmp"
-*
-
-*Defined in renderTypes/bitmapType.ts:4*
-
-The different type of bitmap we can produce.
-
-___
 
 ## Functions
 
@@ -52,7 +36,7 @@ ___
 
 ▸ **initRender**(): `void`
 
-*Defined in initRender.ts:10*
+*Defined in initRender.ts:11*
 
 **Returns:** `void`
 

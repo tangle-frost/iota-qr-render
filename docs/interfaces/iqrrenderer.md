@@ -11,8 +11,9 @@ Interface which defines a QR Code Renderer.
 
 ## Implemented by
 
-* [BitmapRenderer](../classes/bitmaprenderer.md)
 * [CanvasRenderer](../classes/canvasrenderer.md)
+* [JpegRenderer](../classes/jpegrenderer.md)
+* [PngRenderer](../classes/pngrenderer.md)
 * [SvgRenderer](../classes/svgrenderer.md)
 * [TextRenderer](../classes/textrenderer.md)
 

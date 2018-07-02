@@ -22,7 +22,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/14</span>
+        <span class='fraction'>0/10</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/8</span>
+        <span class='fraction'>0/6</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/7</span>
+        <span class='fraction'>0/5</span>
       </div>
     </div>
     <p class="quiet">
@@ -63,8 +63,7 @@
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a>
-<a name='L19'></a><a href='#L19'>19</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -74,8 +73,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -85,9 +83,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * Initialize the factories.
  */
-import { QRRendererFactory } from "./factories/qRRendererFactory";
-import { BitmapRenderer } from "./renderTypes/bitmapRenderer";
+import { QRRendererFactory } from "./factories/qrRendererFactory";
 import { CanvasRenderer } from "./renderTypes/canvasRenderer";
+import { JpegRenderer } from "./renderTypes/jpegRenderer";
+import { PngRenderer } from "./renderTypes/pngRenderer";
 import { SvgRenderer } from "./renderTypes/svgRenderer";
 import { TextRenderer } from "./renderTypes/textRenderer";
 &nbsp;
@@ -95,10 +94,8 @@ export function <span class="fstat-no" title="function not covered" >initRender(
 <span class="cstat-no" title="statement not covered" >    QRRendererFactory.instance().register("canvas", <span class="fstat-no" title="function not covered" >(o</span>pts) =&gt; <span class="cstat-no" title="statement not covered" >new CanvasRenderer(opts))</span>;</span>
 <span class="cstat-no" title="statement not covered" >    QRRendererFactory.instance().register("text", <span class="fstat-no" title="function not covered" >(o</span>pts) =&gt; <span class="cstat-no" title="statement not covered" >new TextRenderer(opts))</span>;</span>
 <span class="cstat-no" title="statement not covered" >    QRRendererFactory.instance().register("svg", <span class="fstat-no" title="function not covered" >(o</span>pts) =&gt; <span class="cstat-no" title="statement not covered" >new SvgRenderer(opts))</span>;</span>
-<span class="cstat-no" title="statement not covered" >    QRRendererFactory.instance().register("bitmap", <span class="fstat-no" title="function not covered" >(o</span>pts) =&gt; <span class="cstat-no" title="statement not covered" >new BitmapRenderer(opts))</span>;</span>
-<span class="cstat-no" title="statement not covered" >    QRRendererFactory.instance().register("jpeg", <span class="fstat-no" title="function not covered" >(o</span>pts) =&gt; <span class="cstat-no" title="statement not covered" >new BitmapRenderer({...opts, bitmapRendererType: "jpeg"}))</span>;</span>
-<span class="cstat-no" title="statement not covered" >    QRRendererFactory.instance().register("png", <span class="fstat-no" title="function not covered" >(o</span>pts) =&gt; <span class="cstat-no" title="statement not covered" >new BitmapRenderer({...opts, bitmapRendererType: "png"}))</span>;</span>
-<span class="cstat-no" title="statement not covered" >    QRRendererFactory.instance().register("bmp", <span class="fstat-no" title="function not covered" >(o</span>pts) =&gt; <span class="cstat-no" title="statement not covered" >new BitmapRenderer({...opts, bitmapRendererType: "bmp"}))</span>;</span>
+<span class="cstat-no" title="statement not covered" >    QRRendererFactory.instance().register("jpeg", <span class="fstat-no" title="function not covered" >(o</span>pts) =&gt; <span class="cstat-no" title="statement not covered" >new JpegRenderer(opts))</span>;</span>
+<span class="cstat-no" title="statement not covered" >    QRRendererFactory.instance().register("png", <span class="fstat-no" title="function not covered" >(o</span>pts) =&gt; <span class="cstat-no" title="statement not covered" >new PngRenderer(opts))</span>;</span>
 }
 &nbsp;</pre></td></tr>
 </table></pre>

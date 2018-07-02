@@ -3,12 +3,14 @@
  */
 export * from "./initRender";
 export * from "./factories/qrRendererFactory";
+export * from "./images/jpegEncoder";
 export * from "./models/IQRRenderer";
-export * from "./renderTypes/bitmapRenderer";
-export * from "./renderTypes/bitmapType";
-export * from "./renderTypes/bitmapRendererOptions";
+export * from "./renderTypes/jpegRenderer";
+export * from "./renderTypes/jpegRendererOptions";
 export * from "./renderTypes/canvasRenderer";
 export * from "./renderTypes/canvasRendererOptions";
+export * from "./renderTypes/pngRenderer";
+export * from "./renderTypes/pngRendererOptions";
 export * from "./renderTypes/svgRenderer";
 export * from "./renderTypes/svgRendererOptions";
 export * from "./renderTypes/textRenderer";
