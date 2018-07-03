@@ -50,8 +50,7 @@
     "dependencies": {
         "@tangle-frost/iota-core": "^0.0.1",
         "@tangle-frost/iota-qr-core": "^0.0.1",
-        "pako": "^1.0.6",
-        "upng-js": "^2.1.0"
+        "pako": "^1.0.6"
     },
     "devDependencies": {
         "@babel/core": "^7.0.0-beta.42",

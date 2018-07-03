@@ -11,5 +11,13 @@ export interface IQRRenderer {
      * @param marginSize The margin size in pixels to leave around the qr code.
      * @returns The rendered object.
      */
-    render(cellData: QRCellData, cellSize?: number, marginSize?: number): any;
+    renderRaw(cellData: QRCellData, cellSize?: number, marginSize?: number): Promise<Uint8Array | string>;
+    /**
+     * Render the cell data as an HTML element.
+     * @param cellData The cell data to render.
+     * @param cellSize The size in pixels of each cell.
+     * @param marginSize The margin size in pixels to leave around the qr code.
+     * @returns The object rendered as an html element.
+     */
+    renderHtml(cellData: QRCellData, cellSize?: number, marginSize?: number): Promise<HTMLElement>;
 }

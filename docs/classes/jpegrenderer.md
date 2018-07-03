@@ -20,7 +20,8 @@ Class to render qr data as bitmap.
 
 ### Methods
 
-* [render](jpegrenderer.md#render)
+* [renderHtml](jpegrenderer.md#renderhtml)
+* [renderRaw](jpegrenderer.md#renderraw)
 
 ---
 
@@ -32,7 +33,7 @@ Class to render qr data as bitmap.
 
 ⊕ **new JpegRenderer**(options?: *[JpegRendererOptions](jpegrendereroptions.md)*): [JpegRenderer](jpegrenderer.md)
 
-*Defined in renderTypes/jpegRenderer.ts:13*
+*Defined in renderTypes/jpegRenderer.ts:15*
 
 Create a new instance of Svg renderer.
 
@@ -48,15 +49,39 @@ ___
 
 ## Methods
 
-<a id="render"></a>
+<a id="renderhtml"></a>
 
-###  render
+###  renderHtml
 
-▸ **render**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`<`Uint8Array`>
+▸ **renderHtml**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`<`HTMLImageElement`>
 
-*Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[render](../interfaces/iqrrenderer.md#render)*
+*Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderHtml](../interfaces/iqrrenderer.md#renderhtml)*
 
-*Defined in renderTypes/jpegRenderer.ts:32*
+*Defined in renderTypes/jpegRenderer.ts:103*
+
+Render the cell data as an HTML element.
+
+**Parameters:**
+
+| Param | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| cellData | `QRCellData` | - |  The cell data to render. |
+| `Default value` cellSize | `number` | 5 |  The size in pixels of each cell. |
+| `Default value` marginSize | `number` | 10 |  The margin size in pixels to leave around the qr code. |
+
+**Returns:** `Promise`<`HTMLImageElement`>
+The object rendered as an html element.
+
+___
+<a id="renderraw"></a>
+
+###  renderRaw
+
+▸ **renderRaw**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`<`Uint8Array`>
+
+*Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderRaw](../interfaces/iqrrenderer.md#renderraw)*
+
+*Defined in renderTypes/jpegRenderer.ts:35*
 
 Render the QR code data as a bitmap.
 

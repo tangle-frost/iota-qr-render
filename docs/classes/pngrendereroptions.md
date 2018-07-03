@@ -12,31 +12,43 @@ Options for Png renderer.
 
 ### Properties
 
-* [backgroundColour](pngrendereroptions.md#backgroundcolour)
-* [foregroundColour](pngrendereroptions.md#foregroundcolour)
+* [background](pngrendereroptions.md#background)
+* [elementStyle](pngrendereroptions.md#elementstyle)
+* [foreground](pngrendereroptions.md#foreground)
 
 ---
 
 ## Properties
 
-<a id="backgroundcolour"></a>
+<a id="background"></a>
 
-### `<Optional>` backgroundColour
+### `<Optional>` background
 
-**● backgroundColour**: *`number`*
+**● background**: *`Color`*
 
-*Defined in renderTypes/pngRendererOptions.ts:13*
+*Defined in renderTypes/pngRendererOptions.ts:15*
 
 The background colour.
 
 ___
-<a id="foregroundcolour"></a>
+<a id="elementstyle"></a>
 
-### `<Optional>` foregroundColour
+### `<Optional>` elementStyle
 
-**● foregroundColour**: *`number`*
+**● elementStyle**: *`string`*
 
-*Defined in renderTypes/pngRendererOptions.ts:8*
+*Defined in renderTypes/pngRendererOptions.ts:19*
+
+The style to apply for the html element.
+
+___
+<a id="foreground"></a>
+
+### `<Optional>` foreground
+
+**● foreground**: *`Color`*
+
+*Defined in renderTypes/pngRendererOptions.ts:10*
 
 The foreground colour.
 

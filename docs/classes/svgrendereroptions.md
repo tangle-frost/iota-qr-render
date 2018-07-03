@@ -12,31 +12,43 @@ Options for Svg renderer.
 
 ### Properties
 
-* [backgroundColour](svgrendereroptions.md#backgroundcolour)
-* [foregroundColour](svgrendereroptions.md#foregroundcolour)
+* [background](svgrendereroptions.md#background)
+* [elementStyle](svgrendereroptions.md#elementstyle)
+* [foreground](svgrendereroptions.md#foreground)
 
 ---
 
 ## Properties
 
-<a id="backgroundcolour"></a>
+<a id="background"></a>
 
-### `<Optional>` backgroundColour
+### `<Optional>` background
 
-**● backgroundColour**: *`string`*
+**● background**: *`Color`*
 
-*Defined in renderTypes/svgRendererOptions.ts:12*
+*Defined in renderTypes/svgRendererOptions.ts:14*
 
 The background colour.
 
 ___
-<a id="foregroundcolour"></a>
+<a id="elementstyle"></a>
 
-### `<Optional>` foregroundColour
+### `<Optional>` elementStyle
 
-**● foregroundColour**: *`string`*
+**● elementStyle**: *`string`*
 
-*Defined in renderTypes/svgRendererOptions.ts:8*
+*Defined in renderTypes/svgRendererOptions.ts:18*
+
+The style to apply for the html element.
+
+___
+<a id="foreground"></a>
+
+### `<Optional>` foreground
+
+**● foreground**: *`Color`*
+
+*Defined in renderTypes/svgRendererOptions.ts:10*
 
 The foreground colour.
 

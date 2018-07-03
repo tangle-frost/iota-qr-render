@@ -12,31 +12,43 @@ Options for Jpeg renderer.
 
 ### Properties
 
-* [backgroundColour](jpegrendereroptions.md#backgroundcolour)
-* [foregroundColour](jpegrendereroptions.md#foregroundcolour)
+* [background](jpegrendereroptions.md#background)
+* [elementStyle](jpegrendereroptions.md#elementstyle)
+* [foreground](jpegrendereroptions.md#foreground)
 
 ---
 
 ## Properties
 
-<a id="backgroundcolour"></a>
+<a id="background"></a>
 
-### `<Optional>` backgroundColour
+### `<Optional>` background
 
-**● backgroundColour**: *`number`*
+**● background**: *`Color`*
 
-*Defined in renderTypes/jpegRendererOptions.ts:13*
+*Defined in renderTypes/jpegRendererOptions.ts:15*
 
 The background colour.
 
 ___
-<a id="foregroundcolour"></a>
+<a id="elementstyle"></a>
 
-### `<Optional>` foregroundColour
+### `<Optional>` elementStyle
 
-**● foregroundColour**: *`number`*
+**● elementStyle**: *`string`*
 
-*Defined in renderTypes/jpegRendererOptions.ts:8*
+*Defined in renderTypes/jpegRendererOptions.ts:19*
+
+The style to apply for the html element.
+
+___
+<a id="foreground"></a>
+
+### `<Optional>` foreground
+
+**● foreground**: *`Color`*
+
+*Defined in renderTypes/jpegRendererOptions.ts:10*
 
 The foreground colour.
 

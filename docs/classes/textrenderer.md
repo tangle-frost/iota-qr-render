@@ -20,7 +20,8 @@ Class to render qr data as t3xt.
 
 ### Methods
 
-* [render](textrenderer.md#render)
+* [renderHtml](textrenderer.md#renderhtml)
+* [renderRaw](textrenderer.md#renderraw)
 
 ---
 
@@ -48,15 +49,39 @@ ___
 
 ## Methods
 
-<a id="render"></a>
+<a id="renderhtml"></a>
 
-###  render
+###  renderHtml
 
-▸ **render**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`<`string`>
+▸ **renderHtml**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`<`HTMLElement`>
 
-*Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[render](../interfaces/iqrrenderer.md#render)*
+*Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderHtml](../interfaces/iqrrenderer.md#renderhtml)*
 
-*Defined in renderTypes/textRenderer.ts:31*
+*Defined in renderTypes/textRenderer.ts:78*
+
+Render the cell data as an HTML element.
+
+**Parameters:**
+
+| Param | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| cellData | `QRCellData` | - |  The cell data to render. |
+| `Default value` cellSize | `number` | 1 |  The size in pixels of each cell. |
+| `Default value` marginSize | `number` | 2 |  The margin size in pixels to leave around the qr code. |
+
+**Returns:** `Promise`<`HTMLElement`>
+The object rendered as an html element.
+
+___
+<a id="renderraw"></a>
+
+###  renderRaw
+
+▸ **renderRaw**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`<`string`>
+
+*Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderRaw](../interfaces/iqrrenderer.md#renderraw)*
+
+*Defined in renderTypes/textRenderer.ts:32*
 
 Render the QR code data as text.
 

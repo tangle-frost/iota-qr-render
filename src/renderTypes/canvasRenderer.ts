@@ -1,3 +1,4 @@
+import { Color } from "@tangle-frost/iota-core/dist/data/color";
 import { ArrayHelper } from "@tangle-frost/iota-core/dist/helpers/arrayHelper";
 import { NumberHelper } from "@tangle-frost/iota-core/dist/helpers/numberHelper";
 import { QRCellData } from "@tangle-frost/iota-qr-core/dist/models/qrCellData";
@@ -17,8 +18,9 @@ export class CanvasRenderer implements IQRRenderer {
      */
     constructor(options?: CanvasRendererOptions) {
         this._options = options || {};
-        this._options.foregroundColour = this._options.foregroundColour || "black";
-        this._options.backgroundColour = this._options.backgroundColour || "white";
+        this._options.foreground = this._options.foreground || Color.fromHex("#000000");
+        this._options.background = this._options.background || Color.fromHex("#FFFFFF");
+        this._options.elementStyle = this._options.elementStyle || "qr-canvas";
     }
 
     /**
@@ -28,7 +30,18 @@ export class CanvasRenderer implements IQRRenderer {
      * @param marginSize The margin to keep around the qr code.
      * @returns The SVG content.
      */
-    public async render(cellData: QRCellData, cellSize: number = 5, marginSize: number = 10): Promise<HTMLCanvasElement> {
+    public async renderRaw(cellData: QRCellData, cellSize: number = 5, marginSize: number = 10): Promise<Uint8Array | string> {
+        throw new Error("renderRaw is not supported for <canvas>");
+    }
+
+    /**
+     * Render the cell data as an HTML element.
+     * @param cellData The cell data to render.
+     * @param cellSize The size in pixels of each cell.
+     * @param marginSize The margin size in pixels to leave around the qr code.
+     * @returns The object rendered as an html element.
+     */
+    public async renderHtml(cellData: QRCellData, cellSize: number = 5, marginSize: number = 10): Promise<HTMLCanvasElement> {
         if (!ArrayHelper.isArray(cellData)) {
             throw new Error("The cellData must be of type QRCellData");
         }
@@ -44,14 +57,16 @@ export class CanvasRenderer implements IQRRenderer {
         const dimensions = cellData.length * cellSize + (2 * marginSize);
 
         const canvas = document.createElement("canvas");
+        canvas.classList.add(this._options.elementStyle);
+
         canvas.width = dimensions;
         canvas.height = dimensions;
 
         const context = canvas.getContext("2d");
 
-        context.fillStyle = this._options.backgroundColour;
+        context.fillStyle = this._options.background.hexWithAlpha();
         context.fillRect(0, 0, dimensions, dimensions);
-        context.fillStyle = this._options.foregroundColour;
+        context.fillStyle = this._options.foreground.hexWithAlpha();
         for (let x = 0; x < cellData.length; x++) {
             for (let y = 0; y < cellData[x].length; y++) {
                 if (cellData[x][y]) {

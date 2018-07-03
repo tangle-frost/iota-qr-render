@@ -12,6 +12,7 @@ Options for Text renderer.
 
 ### Properties
 
+* [elementStyle](textrendereroptions.md#elementstyle)
 * [offChar](textrendereroptions.md#offchar)
 * [onChar](textrendereroptions.md#onchar)
 
@@ -19,6 +20,17 @@ Options for Text renderer.
 
 ## Properties
 
+<a id="elementstyle"></a>
+
+### `<Optional>` elementStyle
+
+**● elementStyle**: *`string`*
+
+*Defined in renderTypes/textRendererOptions.ts:16*
+
+The style to apply for the html element.
+
+___
 <a id="offchar"></a>
 
 ### `<Optional>` offChar

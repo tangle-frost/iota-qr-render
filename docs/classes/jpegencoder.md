@@ -1,12 +1,12 @@
-[@tangle-frost/iota-qr-render](../README.md) > [JPEGEncoder](../classes/jpegencoder.md)
+[@tangle-frost/iota-qr-render](../README.md) > [JpegEncoder](../classes/jpegencoder.md)
 
-# Class: JPEGEncoder
+# Class: JpegEncoder
 
-JPEG Encoder. Baed on JPEG encoder ported to JavaScript and optimized by Andreas Ritter, [www.bytestrom.eu](http://www.bytestrom.eu), 11/2009
+JPEG Encoder. Based on JPEG encoder ported to JavaScript and optimized by Andreas Ritter, [www.bytestrom.eu](http://www.bytestrom.eu), 11/2009
 
 ## Hierarchy
 
-**JPEGEncoder**
+**JpegEncoder**
 
 ## Index
 
@@ -26,13 +26,13 @@ JPEG Encoder. Baed on JPEG encoder ported to JavaScript and optimized by Andreas
 
 ###  constructor
 
-⊕ **new JPEGEncoder**(): [JPEGEncoder](jpegencoder.md)
+⊕ **new JpegEncoder**(): [JpegEncoder](jpegencoder.md)
 
 *Defined in images/jpegEncoder.ts:119*
 
-Create a new instance of JPEGEncoder.
+Create a new instance of JpegEncoder.
 
-**Returns:** [JPEGEncoder](jpegencoder.md)
+**Returns:** [JpegEncoder](jpegencoder.md)
 
 ___
 

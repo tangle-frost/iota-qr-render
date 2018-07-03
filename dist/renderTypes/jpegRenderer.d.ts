@@ -17,5 +17,13 @@ export declare class JpegRenderer implements IQRRenderer {
      * @param marginSize The margin to keep around the qr code.
      * @returns The bitmap content.
      */
-    render(cellData: QRCellData, cellSize?: number, marginSize?: number): Promise<Uint8Array>;
+    renderRaw(cellData: QRCellData, cellSize?: number, marginSize?: number): Promise<Uint8Array>;
+    /**
+     * Render the cell data as an HTML element.
+     * @param cellData The cell data to render.
+     * @param cellSize The size in pixels of each cell.
+     * @param marginSize The margin size in pixels to leave around the qr code.
+     * @returns The object rendered as an html element.
+     */
+    renderHtml(cellData: QRCellData, cellSize?: number, marginSize?: number): Promise<HTMLImageElement>;
 }

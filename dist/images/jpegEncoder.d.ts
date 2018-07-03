@@ -1,10 +1,10 @@
 /**
  * JPEG Encoder.
- * Baed on JPEG encoder ported to JavaScript and optimized by Andreas Ritter, www.bytestrom.eu, 11/2009
+ * Based on JPEG encoder ported to JavaScript and optimized by Andreas Ritter, www.bytestrom.eu, 11/2009
  */
-export declare class JPEGEncoder {
+export declare class JpegEncoder {
     /**
-     * Create a new instance of JPEGEncoder.
+     * Create a new instance of JpegEncoder.
      */
     constructor();
     /**

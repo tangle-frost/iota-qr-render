@@ -3,6 +3,7 @@
  */
 export * from "./initRender";
 export * from "./factories/qrRendererFactory";
+export * from "./helpers/imageHelper";
 export * from "./images/jpegEncoder";
 export * from "./models/IQRRenderer";
 export * from "./renderTypes/jpegRenderer";

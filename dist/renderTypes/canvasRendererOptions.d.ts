@@ -1,3 +1,4 @@
+import { Color } from "@tangle-frost/iota-core/dist/data/color";
 /**
  * Options for Canvas renderer.
  */
@@ -5,9 +6,13 @@ export declare class CanvasRendererOptions {
     /**
      * The foreground colour.
      */
-    foregroundColour?: string;
+    foreground?: Color;
     /**
      * The background colour.
      */
-    backgroundColour?: string;
+    background?: Color;
+    /**
+     * The style to apply for the html element.
+     */
+    elementStyle?: string;
 }

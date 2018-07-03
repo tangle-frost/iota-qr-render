@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">89.29% </span>
+        <span class="strong">76.47% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>25/28</span>
+        <span class='fraction'>26/34</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">85% </span>
+        <span class="strong">79.17% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>17/20</span>
+        <span class='fraction'>19/24</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>2/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">89.29% </span>
+        <span class="strong">76.47% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>25/28</span>
+        <span class='fraction'>26/34</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -115,7 +115,25 @@
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
 <a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -133,6 +151,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -184,6 +203,23 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ArrayHelper } from "@tangle-frost/iota-core/dist/helpers/arrayHelper";
 import { NumberHelper } from "@tangle-frost/iota-core/dist/helpers/numberHelper";
 import { QRCellData } from "@tangle-frost/iota-qr-core/dist/models/qrCellData";
@@ -205,6 +241,7 @@ export class TextRenderer implements IQRRenderer {
         this._options = options || {};
         this._options.onChar = this._options.onChar || "██";
         this._options.offChar = this._options.offChar || "  ";
+        this._options.elementStyle = this._options.elementStyle || "qr-text";
     }
 &nbsp;
     /**
@@ -214,7 +251,7 @@ export class TextRenderer implements IQRRenderer {
      * @param marginSize The margin to keep around the qr code.
      * @returns The text content.
      */
-    public async render(cellData: QRCellData, cellSize: number = 1, marginSize: number = 2): Promise&lt;string&gt; {
+    public async renderRaw(cellData: QRCellData, cellSize: number = 1, marginSize: number = 2): Promise&lt;string&gt; {
         <span class="missing-if-branch" title="if path not taken" >I</span>if (!ArrayHelper.isArray(cellData)) {
 <span class="cstat-no" title="statement not covered" >            throw new Error("The cellData must be of type QRCellData");</span>
         }
@@ -251,6 +288,23 @@ export class TextRenderer implements IQRRenderer {
             text += `${this._options.offChar.repeat(cellSize * cellData.length)}\r\n`;
         }
         return text;
+    }
+&nbsp;
+    /**
+     * Render the cell data as an HTML element.
+     * @param cellData The cell data to render.
+     * @param cellSize The size in pixels of each cell.
+     * @param marginSize The margin size in pixels to leave around the qr code.
+     * @returns The object rendered as an html element.
+     */
+    public <span class="fstat-no" title="function not covered" >async</span> renderHtml(cellData: QRCellData, cellSize: number = <span class="branch-0 cbranch-no" title="branch not covered" >1,</span> marginSize: number = <span class="branch-0 cbranch-no" title="branch not covered" >2)</span>: Promise&lt;HTMLElement&gt; {
+        const raw = <span class="cstat-no" title="statement not covered" >await this.renderRaw(cellData, cellSize, marginSize);</span>
+&nbsp;
+        const div = <span class="cstat-no" title="statement not covered" >document.createElement("div");</span>
+<span class="cstat-no" title="statement not covered" >        div.classList.add(this._options.elementStyle);</span>
+        // tslint:disable-next-line:no-inner-html
+<span class="cstat-no" title="statement not covered" >        div.innerHTML = raw.replace(/\\r\\n/g, "&lt;br/&gt;");</span>
+<span class="cstat-no" title="statement not covered" >        return div;</span>
     }
 }
 &nbsp;</pre></td></tr>

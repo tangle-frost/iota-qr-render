@@ -21,17 +21,40 @@ Interface which defines a QR Code Renderer.
 
 ### Methods
 
-* [render](iqrrenderer.md#render)
+* [renderHtml](iqrrenderer.md#renderhtml)
+* [renderRaw](iqrrenderer.md#renderraw)
 
 ---
 
 ## Methods
 
-<a id="render"></a>
+<a id="renderhtml"></a>
 
-###  render
+###  renderHtml
 
-▸ **render**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `any`
+▸ **renderHtml**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`<`HTMLElement`>
+
+*Defined in models/IQRRenderer.ts:24*
+
+Render the cell data as an HTML element.
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| cellData | `QRCellData` |  The cell data to render. |
+| `Optional` cellSize | `number` |  The size in pixels of each cell. |
+| `Optional` marginSize | `number` |  The margin size in pixels to leave around the qr code. |
+
+**Returns:** `Promise`<`HTMLElement`>
+The object rendered as an html element.
+
+___
+<a id="renderraw"></a>
+
+###  renderRaw
+
+▸ **renderRaw**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`< `Uint8Array` &#124; `string`>
 
 *Defined in models/IQRRenderer.ts:15*
 
@@ -45,7 +68,7 @@ Render the cell data with the given dimensions.
 | `Optional` cellSize | `number` |  The size in pixels of each cell. |
 | `Optional` marginSize | `number` |  The margin size in pixels to leave around the qr code. |
 
-**Returns:** `any`
+**Returns:** `Promise`< `Uint8Array` &#124; `string`>
 The rendered object.
 
 ___

@@ -12,14 +12,14 @@ describe("TextRenderer", () => {
         chai.should().exist(obj);
     });
 
-    describe("render", () => {
+    describe("renderRaw", () => {
         it("can render data", async () => {
             const qr = new QR();
             qr.addData("This is a test");
             const data = qr.generate();
 
             const obj = new TextRenderer();
-            const txt = await obj.render(data);
+            const txt = await obj.renderRaw(data);
 
             const expected = fs.readFileSync("./test/renderTypes/results/txt1.txt");
 

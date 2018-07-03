@@ -1,7 +1,9 @@
+import { Color } from "@tangle-frost/iota-core/dist/data/color";
 import { ArrayHelper } from "@tangle-frost/iota-core/dist/helpers/arrayHelper";
 import { NumberHelper } from "@tangle-frost/iota-core/dist/helpers/numberHelper";
 import { QRCellData } from "@tangle-frost/iota-qr-core/dist/models/qrCellData";
-import { JPEGEncoder } from "../images/jpegEncoder";
+import { ImageHelper } from "../helpers/imageHelper";
+import { JpegEncoder } from "../images/jpegEncoder";
 import { IQRRenderer } from "../models/IQRRenderer";
 import { JpegRendererOptions } from "./jpegRendererOptions";
 
@@ -18,8 +20,9 @@ export class JpegRenderer implements IQRRenderer {
      */
     constructor(options?: JpegRendererOptions) {
         this._options = options || {};
-        this._options.foregroundColour = this._options.foregroundColour || 0x000000;
-        this._options.backgroundColour = this._options.backgroundColour || 0xFFFFFF;
+        this._options.foreground = this._options.foreground || Color.fromHex("#000000");
+        this._options.background = this._options.background || Color.fromHex("#FFFFFF");
+        this._options.elementStyle = this._options.elementStyle || "qr-jpeg";
     }
 
     /**
@@ -29,7 +32,7 @@ export class JpegRenderer implements IQRRenderer {
      * @param marginSize The margin to keep around the qr code.
      * @returns The bitmap content.
      */
-    public async render(cellData: QRCellData, cellSize: number = 5, marginSize: number = 10): Promise<Uint8Array> {
+    public async renderRaw(cellData: QRCellData, cellSize: number = 5, marginSize: number = 10): Promise<Uint8Array> {
         if (!ArrayHelper.isArray(cellData)) {
             throw new Error("The cellData must be of type QRCellData");
         }
@@ -46,9 +49,9 @@ export class JpegRenderer implements IQRRenderer {
 
         const data = new Uint8Array(dimensions * dimensions * 4);
         for (let i = 0; i < data.length; i += 4) {
-            data[i] = (this._options.backgroundColour >> 16) & 0xFF;
-            data[i + 1] = (this._options.backgroundColour >> 8) & 0xFF;
-            data[i + 2] = this._options.backgroundColour & 0xFF;
+            data[i] = this._options.background.red();
+            data[i + 1] = this._options.background.green();
+            data[i + 2] = this._options.background.blue();
             data[i + 3] = 0xFF;
         }
 
@@ -58,26 +61,26 @@ export class JpegRenderer implements IQRRenderer {
             let r = 0;
 
             for (let i = 0; i < marginSize; i++) {
-                row[r++] = (this._options.backgroundColour >> 16) & 0xFF;
-                row[r++] = (this._options.backgroundColour >> 8) & 0xFF;
-                row[r++] = this._options.backgroundColour & 0xFF;
+                row[r++] = this._options.background.red();
+                row[r++] = this._options.background.green();
+                row[r++] = this._options.background.blue();
                 row[r++] = 0xFF;
             }
 
             for (let y = 0; y < cellData[x].length; y++) {
-                const colour = cellData[y][x] ? this._options.foregroundColour : this._options.backgroundColour;
+                const colour = cellData[y][x] ? this._options.foreground : this._options.background;
                 for (let c = 0; c < cellSize; c ++) {
-                    row[r++] = (colour >> 16)  & 0xFF;
-                    row[r++] = (colour >> 8) & 0xFF;
-                    row[r++] = colour & 0xFF;
+                    row[r++] = colour.red();
+                    row[r++] = colour.green();
+                    row[r++] = colour.blue();
                     row[r++] = 0xFF;
                 }
             }
 
             for (let i = 0; i < marginSize; i ++) {
-                row[r++] = (this._options.backgroundColour >> 16) & 0xFF;
-                row[r++] = (this._options.backgroundColour >> 8) & 0xFF;
-                row[r++] = this._options.backgroundColour & 0xFF;
+                row[r++] = this._options.background.red();
+                row[r++] = this._options.background.green();
+                row[r++] = this._options.background.blue();
                 row[r++] = 0xFF;
             }
 
@@ -87,6 +90,23 @@ export class JpegRenderer implements IQRRenderer {
             }
         }
 
-        return new JPEGEncoder().encode(dimensions, dimensions, data, 80);
+        return new JpegEncoder().encode(dimensions, dimensions, data, 75);
+    }
+
+    /**
+     * Render the cell data as an HTML element.
+     * @param cellData The cell data to render.
+     * @param cellSize The size in pixels of each cell.
+     * @param marginSize The margin size in pixels to leave around the qr code.
+     * @returns The object rendered as an html element.
+     */
+    public async renderHtml(cellData: QRCellData, cellSize: number = 5, marginSize: number = 10): Promise<HTMLImageElement> {
+        const raw = await this.renderRaw(cellData, cellSize, marginSize);
+
+        const img = document.createElement("img");
+        img.classList.add(this._options.elementStyle);
+        img.src = ImageHelper.dataToImageSource("image/jpeg", raw);
+
+        return img;
     }
 }

@@ -1,8 +1,8 @@
 /**
  * JPEG Encoder.
- * Baed on JPEG encoder ported to JavaScript and optimized by Andreas Ritter, www.bytestrom.eu, 11/2009
+ * Based on JPEG encoder ported to JavaScript and optimized by Andreas Ritter, www.bytestrom.eu, 11/2009
  */
-export class JPEGEncoder {
+export class JpegEncoder {
     /* @internal */
     private static readonly STD_DC_LUMINANCE_NRCODES: number[] = [0, 0, 1, 5, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0];
     /* @internal */
@@ -119,7 +119,7 @@ export class JPEGEncoder {
     private readonly _rgbYuvTable: number[];
 
     /**
-     * Create a new instance of JPEGEncoder.
+     * Create a new instance of JpegEncoder.
      */
     constructor() {
         this._yTable = new Array(64);
@@ -284,7 +284,7 @@ export class JPEGEncoder {
             } else if (t > 255) {
                 t = 255;
             }
-            this._yTable[JPEGEncoder.SIG_ZAG[i]] = t;
+            this._yTable[JpegEncoder.SIG_ZAG[i]] = t;
         }
         const UVQT = [
             17, 18, 24, 47, 99, 99, 99, 99,
@@ -303,7 +303,7 @@ export class JPEGEncoder {
             } else if (u > 255) {
                 u = 255;
             }
-            this._uvTable[JPEGEncoder.SIG_ZAG[j]] = u;
+            this._uvTable[JpegEncoder.SIG_ZAG[j]] = u;
         }
         const aasf = [
             1, 1.387039845, 1.306562965, 1.175875602,
@@ -312,8 +312,8 @@ export class JPEGEncoder {
         let k = 0;
         for (let row = 0; row < 8; row++) {
             for (let col = 0; col < 8; col++) {
-                this._fdtblY[k] = (1 / (this._yTable[JPEGEncoder.SIG_ZAG[k]] * aasf[row] * aasf[col] * 8));
-                this._fdtblUV[k] = (1 / (this._uvTable[JPEGEncoder.SIG_ZAG[k]] * aasf[row] * aasf[col] * 8));
+                this._fdtblY[k] = (1 / (this._yTable[JpegEncoder.SIG_ZAG[k]] * aasf[row] * aasf[col] * 8));
+                this._fdtblUV[k] = (1 / (this._uvTable[JpegEncoder.SIG_ZAG[k]] * aasf[row] * aasf[col] * 8));
                 k++;
             }
         }
@@ -339,10 +339,10 @@ export class JPEGEncoder {
 
     /* @internal */
     private initHuffmanTbl(): void {
-        this._ydcHashTable = this.computeHuffmanTbl(JPEGEncoder.STD_DC_LUMINANCE_NRCODES, JPEGEncoder.STD_DC_LUMINANCE_VALUES);
-        this._uvdcHashTable = this.computeHuffmanTbl(JPEGEncoder.STD_DC_CHROMINANCE_NRCODES, JPEGEncoder.STD_DC_CHROMINANCE_VALUES);
-        this._yacHashTable = this.computeHuffmanTbl(JPEGEncoder.STD_AC_LUMINANCE_NRCODES, JPEGEncoder.STD_AC_LUMINANCE_VALUES);
-        this._uvacHashTable = this.computeHuffmanTbl(JPEGEncoder.STD_AC_CHROMINANCE_NRCODES, JPEGEncoder.STD_AC_CHROMINANCE_VALUES);
+        this._ydcHashTable = this.computeHuffmanTbl(JpegEncoder.STD_DC_LUMINANCE_NRCODES, JpegEncoder.STD_DC_LUMINANCE_VALUES);
+        this._uvdcHashTable = this.computeHuffmanTbl(JpegEncoder.STD_DC_CHROMINANCE_NRCODES, JpegEncoder.STD_DC_CHROMINANCE_VALUES);
+        this._yacHashTable = this.computeHuffmanTbl(JpegEncoder.STD_AC_LUMINANCE_NRCODES, JpegEncoder.STD_AC_LUMINANCE_VALUES);
+        this._uvacHashTable = this.computeHuffmanTbl(JpegEncoder.STD_AC_CHROMINANCE_NRCODES, JpegEncoder.STD_AC_CHROMINANCE_VALUES);
     }
 
     /* @internal */
@@ -612,34 +612,34 @@ export class JPEGEncoder {
 
         this.writeByte(0); // HTYDCinfo
         for (let i = 0; i < 16; i++) {
-            this.writeByte(JPEGEncoder.STD_DC_LUMINANCE_NRCODES[i + 1]);
+            this.writeByte(JpegEncoder.STD_DC_LUMINANCE_NRCODES[i + 1]);
         }
         for (let j = 0; j <= 11; j++) {
-            this.writeByte(JPEGEncoder.STD_DC_LUMINANCE_VALUES[j]);
+            this.writeByte(JpegEncoder.STD_DC_LUMINANCE_VALUES[j]);
         }
 
         this.writeByte(0x10); // HTYACinfo
         for (let k = 0; k < 16; k++) {
-            this.writeByte(JPEGEncoder.STD_AC_LUMINANCE_NRCODES[k + 1]);
+            this.writeByte(JpegEncoder.STD_AC_LUMINANCE_NRCODES[k + 1]);
         }
         for (let l = 0; l <= 161; l++) {
-            this.writeByte(JPEGEncoder.STD_AC_LUMINANCE_VALUES[l]);
+            this.writeByte(JpegEncoder.STD_AC_LUMINANCE_VALUES[l]);
         }
 
         this.writeByte(1); // HTUDCinfo
         for (let m = 0; m < 16; m++) {
-            this.writeByte(JPEGEncoder.STD_DC_CHROMINANCE_NRCODES[m + 1]);
+            this.writeByte(JpegEncoder.STD_DC_CHROMINANCE_NRCODES[m + 1]);
         }
         for (let n = 0; n <= 11; n++) {
-            this.writeByte(JPEGEncoder.STD_DC_CHROMINANCE_VALUES[n]);
+            this.writeByte(JpegEncoder.STD_DC_CHROMINANCE_VALUES[n]);
         }
 
         this.writeByte(0x11); // HTUACinfo
         for (let o = 0; o < 16; o++) {
-            this.writeByte(JPEGEncoder.STD_AC_CHROMINANCE_NRCODES[o + 1]);
+            this.writeByte(JpegEncoder.STD_AC_CHROMINANCE_NRCODES[o + 1]);
         }
         for (let p = 0; p <= 161; p++) {
-            this.writeByte(JPEGEncoder.STD_AC_CHROMINANCE_VALUES[p]);
+            this.writeByte(JpegEncoder.STD_AC_CHROMINANCE_VALUES[p]);
         }
     }
 
@@ -671,7 +671,7 @@ export class JPEGEncoder {
         const DU_DCT = this.fDCTQuant(CDU, fdtbl);
         //ZigZag reorder
         for (let j = 0; j < I64; ++j) {
-            this._du[JPEGEncoder.SIG_ZAG[j]] = DU_DCT[j];
+            this._du[JpegEncoder.SIG_ZAG[j]] = DU_DCT[j];
         }
         const diff = this._du[0] - DC;
         DC = this._du[0];
