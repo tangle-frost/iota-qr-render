@@ -294,7 +294,7 @@ export class JpegRenderer implements IQRRenderer {
         this._options = options || {};
         this._options.foreground = this._options.foreground || Color.fromHex("#000000");
         this._options.background = this._options.background || Color.fromHex("#FFFFFF");
-        this._options.elementStyle = this._options.elementStyle || "qr-jpeg";
+        this._options.cssClass = this._options.cssClass || "qr-jpeg";
     }
 &nbsp;
     /**
@@ -376,7 +376,7 @@ export class JpegRenderer implements IQRRenderer {
         const raw = <span class="cstat-no" title="statement not covered" >await this.renderRaw(cellData, cellSize, marginSize);</span>
 &nbsp;
         const img = <span class="cstat-no" title="statement not covered" >document.createElement("img");</span>
-<span class="cstat-no" title="statement not covered" >        img.classList.add(this._options.elementStyle);</span>
+<span class="cstat-no" title="statement not covered" >        img.classList.add(this._options.cssClass);</span>
 <span class="cstat-no" title="statement not covered" >        img.src = ImageHelper.dataToImageSource("image/jpeg", raw);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        return img;</span>

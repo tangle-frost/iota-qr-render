@@ -241,7 +241,7 @@ export class TextRenderer implements IQRRenderer {
         this._options = options || {};
         this._options.onChar = this._options.onChar || "██";
         this._options.offChar = this._options.offChar || "  ";
-        this._options.elementStyle = this._options.elementStyle || "qr-text";
+        this._options.cssClass = this._options.cssClass || "qr-text";
     }
 &nbsp;
     /**
@@ -297,13 +297,13 @@ export class TextRenderer implements IQRRenderer {
      * @param marginSize The margin size in pixels to leave around the qr code.
      * @returns The object rendered as an html element.
      */
-    public <span class="fstat-no" title="function not covered" >async</span> renderHtml(cellData: QRCellData, cellSize: number = <span class="branch-0 cbranch-no" title="branch not covered" >1,</span> marginSize: number = <span class="branch-0 cbranch-no" title="branch not covered" >2)</span>: Promise&lt;HTMLElement&gt; {
+    public <span class="fstat-no" title="function not covered" >async</span> renderHtml(cellData: QRCellData, cellSize: number = <span class="branch-0 cbranch-no" title="branch not covered" >1,</span> marginSize: number = <span class="branch-0 cbranch-no" title="branch not covered" >2)</span>: Promise&lt;Element&gt; {
         const raw = <span class="cstat-no" title="statement not covered" >await this.renderRaw(cellData, cellSize, marginSize);</span>
 &nbsp;
         const div = <span class="cstat-no" title="statement not covered" >document.createElement("div");</span>
-<span class="cstat-no" title="statement not covered" >        div.classList.add(this._options.elementStyle);</span>
+<span class="cstat-no" title="statement not covered" >        div.classList.add(this._options.cssClass);</span>
         // tslint:disable-next-line:no-inner-html
-<span class="cstat-no" title="statement not covered" >        div.innerHTML = raw.replace(/\\r\\n/g, "&lt;br/&gt;");</span>
+<span class="cstat-no" title="statement not covered" >        div.innerHTML = raw.replace(/\r/g, "").replace(/\n/g, "&lt;br/&gt;").replace(/ /g, "&amp;nbsp;");</span>
 <span class="cstat-no" title="statement not covered" >        return div;</span>
     }
 }

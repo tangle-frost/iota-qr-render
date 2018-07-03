@@ -13,7 +13,7 @@ Options for Canvas renderer.
 ### Properties
 
 * [background](canvasrendereroptions.md#background)
-* [elementStyle](canvasrendereroptions.md#elementstyle)
+* [cssClass](canvasrendereroptions.md#cssclass)
 * [foreground](canvasrendereroptions.md#foreground)
 
 ---
@@ -31,15 +31,15 @@ Options for Canvas renderer.
 The background colour.
 
 ___
-<a id="elementstyle"></a>
+<a id="cssclass"></a>
 
-### `<Optional>` elementStyle
+### `<Optional>` cssClass
 
-**● elementStyle**: *`string`*
+**● cssClass**: *`string`*
 
 *Defined in renderTypes/canvasRendererOptions.ts:18*
 
-The style to apply for the html element.
+The css class to apply for the html element.
 
 ___
 <a id="foreground"></a>

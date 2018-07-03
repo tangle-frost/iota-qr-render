@@ -20,7 +20,7 @@ export class CanvasRenderer implements IQRRenderer {
         this._options = options || {};
         this._options.foreground = this._options.foreground || Color.fromHex("#000000");
         this._options.background = this._options.background || Color.fromHex("#FFFFFF");
-        this._options.elementStyle = this._options.elementStyle || "qr-canvas";
+        this._options.cssClass = this._options.cssClass || "qr-canvas";
     }
 
     /**
@@ -57,16 +57,16 @@ export class CanvasRenderer implements IQRRenderer {
         const dimensions = cellData.length * cellSize + (2 * marginSize);
 
         const canvas = document.createElement("canvas");
-        canvas.classList.add(this._options.elementStyle);
+        canvas.classList.add(this._options.cssClass);
 
         canvas.width = dimensions;
         canvas.height = dimensions;
 
         const context = canvas.getContext("2d");
 
-        context.fillStyle = this._options.background.hexWithAlpha();
+        context.fillStyle = this._options.background.rgbaText();
         context.fillRect(0, 0, dimensions, dimensions);
-        context.fillStyle = this._options.foreground.hexWithAlpha();
+        context.fillStyle = this._options.foreground.rgbaText();
         for (let x = 0; x < cellData.length; x++) {
             for (let y = 0; y < cellData[x].length; y++) {
                 if (cellData[x][y]) {

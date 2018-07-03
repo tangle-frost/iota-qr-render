@@ -11,7 +11,7 @@ export declare class TextRendererOptions {
      */
     offChar?: string;
     /**
-     * The style to apply for the html element.
+     * The css class to apply for the html element.
      */
-    elementStyle?: string;
+    cssClass?: string;
 }

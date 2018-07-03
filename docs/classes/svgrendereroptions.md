@@ -13,7 +13,7 @@ Options for Svg renderer.
 ### Properties
 
 * [background](svgrendereroptions.md#background)
-* [elementStyle](svgrendereroptions.md#elementstyle)
+* [cssClass](svgrendereroptions.md#cssclass)
 * [foreground](svgrendereroptions.md#foreground)
 
 ---
@@ -31,15 +31,15 @@ Options for Svg renderer.
 The background colour.
 
 ___
-<a id="elementstyle"></a>
+<a id="cssclass"></a>
 
-### `<Optional>` elementStyle
+### `<Optional>` cssClass
 
-**● elementStyle**: *`string`*
+**● cssClass**: *`string`*
 
 *Defined in renderTypes/svgRendererOptions.ts:18*
 
-The style to apply for the html element.
+The css class to apply for the html element.
 
 ___
 <a id="foreground"></a>

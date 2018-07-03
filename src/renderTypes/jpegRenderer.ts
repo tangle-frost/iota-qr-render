@@ -22,7 +22,7 @@ export class JpegRenderer implements IQRRenderer {
         this._options = options || {};
         this._options.foreground = this._options.foreground || Color.fromHex("#000000");
         this._options.background = this._options.background || Color.fromHex("#FFFFFF");
-        this._options.elementStyle = this._options.elementStyle || "qr-jpeg";
+        this._options.cssClass = this._options.cssClass || "qr-jpeg";
     }
 
     /**
@@ -104,7 +104,7 @@ export class JpegRenderer implements IQRRenderer {
         const raw = await this.renderRaw(cellData, cellSize, marginSize);
 
         const img = document.createElement("img");
-        img.classList.add(this._options.elementStyle);
+        img.classList.add(this._options.cssClass);
         img.src = ImageHelper.dataToImageSource("image/jpeg", raw);
 
         return img;

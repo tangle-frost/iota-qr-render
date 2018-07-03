@@ -13,7 +13,7 @@ Options for Jpeg renderer.
 ### Properties
 
 * [background](jpegrendereroptions.md#background)
-* [elementStyle](jpegrendereroptions.md#elementstyle)
+* [cssClass](jpegrendereroptions.md#cssclass)
 * [foreground](jpegrendereroptions.md#foreground)
 
 ---
@@ -31,15 +31,15 @@ Options for Jpeg renderer.
 The background colour.
 
 ___
-<a id="elementstyle"></a>
+<a id="cssclass"></a>
 
-### `<Optional>` elementStyle
+### `<Optional>` cssClass
 
-**● elementStyle**: *`string`*
+**● cssClass**: *`string`*
 
 *Defined in renderTypes/jpegRendererOptions.ts:19*
 
-The style to apply for the html element.
+The css class to apply for the html element.
 
 ___
 <a id="foreground"></a>

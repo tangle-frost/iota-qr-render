@@ -19,7 +19,7 @@ export class TextRenderer implements IQRRenderer {
         this._options = options || {};
         this._options.onChar = this._options.onChar || "██";
         this._options.offChar = this._options.offChar || "  ";
-        this._options.elementStyle = this._options.elementStyle || "qr-text";
+        this._options.cssClass = this._options.cssClass || "qr-text";
     }
 
     /**
@@ -75,13 +75,13 @@ export class TextRenderer implements IQRRenderer {
      * @param marginSize The margin size in pixels to leave around the qr code.
      * @returns The object rendered as an html element.
      */
-    public async renderHtml(cellData: QRCellData, cellSize: number = 1, marginSize: number = 2): Promise<HTMLElement> {
+    public async renderHtml(cellData: QRCellData, cellSize: number = 1, marginSize: number = 2): Promise<Element> {
         const raw = await this.renderRaw(cellData, cellSize, marginSize);
 
         const div = document.createElement("div");
-        div.classList.add(this._options.elementStyle);
+        div.classList.add(this._options.cssClass);
         // tslint:disable-next-line:no-inner-html
-        div.innerHTML = raw.replace(/\\r\\n/g, "<br/>");
+        div.innerHTML = raw.replace(/\r/g, "").replace(/\n/g, "<br/>").replace(/ /g, "&nbsp;");
         return div;
     }
 }

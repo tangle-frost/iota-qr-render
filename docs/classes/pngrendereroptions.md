@@ -13,7 +13,7 @@ Options for Png renderer.
 ### Properties
 
 * [background](pngrendereroptions.md#background)
-* [elementStyle](pngrendereroptions.md#elementstyle)
+* [cssClass](pngrendereroptions.md#cssclass)
 * [foreground](pngrendereroptions.md#foreground)
 
 ---
@@ -31,15 +31,15 @@ Options for Png renderer.
 The background colour.
 
 ___
-<a id="elementstyle"></a>
+<a id="cssclass"></a>
 
-### `<Optional>` elementStyle
+### `<Optional>` cssClass
 
-**● elementStyle**: *`string`*
+**● cssClass**: *`string`*
 
 *Defined in renderTypes/pngRendererOptions.ts:19*
 
-The style to apply for the html element.
+The css class to apply for the html element.
 
 ___
 <a id="foreground"></a>

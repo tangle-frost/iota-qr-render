@@ -16,7 +16,7 @@ describe("SvgRenderer", () => {
     describe("renderRaw", () => {
         it("can render data", async () => {
             const qr = new QR();
-            qr.addData("This is a test");
+            qr.addText("This is a test");
             const data = qr.generate();
 
             const obj = new SvgRenderer({ foreground: Color.fromHex("#FF0000"), background: Color.fromHex("#00FF00") });

@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30% </span>
+        <span class="strong">23.08% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/10</span>
+        <span class='fraction'>3/13</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/1</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">30% </span>
+        <span class="strong">23.08% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/10</span>
+        <span class='fraction'>3/13</span>
       </div>
     </div>
     <p class="quiet">
@@ -75,7 +75,10 @@
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -94,6 +97,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -123,8 +129,11 @@ export class ImageHelper {
 &nbsp;
         let imageSource;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (ObjectHelper.isType(data, Uint8Array) || StringHelper.isString(data)) {</span>
+<span class="cstat-no" title="statement not covered" >        if (ObjectHelper.isType(data, Uint8Array)) {</span>
             const base64Data = <span class="cstat-no" title="statement not covered" >btoa(String.fromCharCode.apply(null, data));</span>
+<span class="cstat-no" title="statement not covered" >            imageSource = `data:${mimeType};base64,${base64Data}`;</span>
+        } else <span class="cstat-no" title="statement not covered" >if (StringHelper.isString(data)) {</span>
+            const base64Data = <span class="cstat-no" title="statement not covered" >btoa(data);</span>
 <span class="cstat-no" title="statement not covered" >            imageSource = `data:${mimeType};base64,${base64Data}`;</span>
         } else {
 <span class="cstat-no" title="statement not covered" >            throw new Error("The data must be a Uint8Array or string");</span>

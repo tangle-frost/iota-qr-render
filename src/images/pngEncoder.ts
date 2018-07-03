@@ -6,11 +6,12 @@ import pako from "pako/lib/deflate";
  */
 export class PngEncoder {
     /**
-     * Create a new instance of PngEncoder.
+     * Encode the image frames to png.
+     * @param bufs The frame buffers to encode.
+     * @param w The image width.
+     * @param h The image height.
+     * @returns The data for the image.
      */
-    constructor() {
-    }
-
     public encode(bufs: ArrayBuffer[], w: number, h: number): Uint8Array {
         const ps = 0;
         const forbidPlte = false;
@@ -162,6 +163,7 @@ export class PngEncoder {
         return new Uint8Array(data.buffer.slice(0, offset));
     }
 
+    /* @internal */
     private compressPNG(bufs: ArrayBuffer[], w: number, h: number, ps: number, forbidPlte: boolean): ImageData {
         const out = this.compress(bufs, w, h, ps, 0, forbidPlte);
         for (let i = 0; i < bufs.length; i++) {
@@ -176,6 +178,7 @@ export class PngEncoder {
         return out;
     }
 
+    /* @internal */
     private compress(inBufs: ArrayBuffer[], w: number, h: number, inPs: number, forGIF: number, forbidPlte: boolean): ImageData {
         let ctype = 6;
         let depth = 8;
@@ -383,6 +386,7 @@ export class PngEncoder {
         return { ctype: ctype, depth: depth, plte: plte, gotAlpha: gotAlpha, frames: frms };
     }
 
+    /* @internal */
     private filterZero(img: Uint8Array, h: number, bpp: number, bpl: number, data: Uint8Array): Uint8Array {
         const fls = [];
         for (let t = 0; t < 5; t++) {
@@ -408,6 +412,7 @@ export class PngEncoder {
         return fls[ti];
     }
 
+    /* @internal */
     private filterLine(data: Uint8Array, img: Uint8Array, y: number, bpl: number, bpp: number, type: number): void {
         const i = y * bpl;
         let di = i + y;
@@ -469,6 +474,7 @@ export class PngEncoder {
         }
     }
 
+    /* @internal */
     private paeth(a: number, b: number, c: number): number {
         const p = a + b - c;
         const pa = Math.abs(p - a);
@@ -482,12 +488,14 @@ export class PngEncoder {
         return c;
     }
 
+    /* @internal */
     private writeASCII(data: Uint8Array, p: number, s: string): void {
         for (let i = 0; i < s.length; i++) {
             data[p + i] = s.charCodeAt(i);
         }
     }
 
+    /* @internal */
     private writeUint(buff: Uint8Array, p: number, n: number): void {
         buff[p] = (n >> 24) & 255;
         buff[p + 1] = (n >> 16) & 255;
@@ -495,11 +503,13 @@ export class PngEncoder {
         buff[p + 3] = n & 255;
     }
 
+    /* @internal */
     private writeUshort(buff: Uint8Array, p: number, n: number): void {
         buff[p] = (n >> 8) & 255;
         buff[p + 1] = n & 255;
     }
 
+    /* @internal */
     private copyTile(sb: Uint8Array, sw: number, sh: number, tb: Uint8Array, tw: number, th: number, xoff: number, yoff: number, mode: number): boolean {
         const w = Math.min(sw, tw);
         const h = Math.min(sh, th);
@@ -579,10 +589,12 @@ export class PngEncoder {
         return true;
     }
 
+    /* @internal */
     private crc(b: Uint8Array, o: number, l: number): number {
         return this.crcUpdate(0xFFFFFFFF, b, o, l) ^ 0xFFFFFFFF;
     }
 
+    /* @internal */
     private crcUpdate(c: number, buf: Uint8Array, off: number, len: number): number {
         let localC = c;
         const crcTable = this.crcTable();
@@ -592,6 +604,7 @@ export class PngEncoder {
         return localC;
     }
 
+    /* @internal */
     private crcTable(): Uint32Array {
         const tab = new Uint32Array(256);
         for (let n = 0; n < 256; n++) {
@@ -608,6 +621,7 @@ export class PngEncoder {
         return tab;
     }
 
+    /* @internal */
     private quantize(bufs: ArrayBuffer[], ps: number, roundAlpha: number): { bufs: ArrayBuffer[]; plte: Leaf[] } {
         const imgs: Uint8Array[] = [];
         let totl = 0;
@@ -722,6 +736,7 @@ export class PngEncoder {
         return { bufs: outBufs, plte: leafs };
     }
 
+    /* @internal */
     private quantizeStats(nimg: Uint8Array, i0: number, i1: number): { R: number[]; m: number[]; N: number } {
         const R = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
         const m = [0, 0, 0, 0];
@@ -744,6 +759,7 @@ export class PngEncoder {
         return { R: R, m: m, N: N };
     }
 
+    /* @internal */
     private quantizeEstats(stats: { R: number[]; m: number[]; N: number }): {
         Cov: number[];
         q: number[];
@@ -802,11 +818,13 @@ export class PngEncoder {
         };
     }
 
+    /* @internal */
     private quantizePlaneDst(est: { e: number[]; eMq: number }, r: number, g: number, b: number, a: number): number {
         const e = est.e;
         return e[0] * r + e[1] * g + e[2] * b + e[3] * a - est.eMq;
     }
 
+    /* @internal */
     private quantizeSplitPixels(nimg: Uint8Array, nimg32: Uint32Array, i0in: number, i1in: number, e: number[], eMq: number): number {
         let i1 = i1in - 4;
         let i0 = i0in;
@@ -834,10 +852,12 @@ export class PngEncoder {
         return i0 + 4;
     }
 
+    /* @internal */
     private quantizeVecDot(nimg: Uint8Array, i: number, e: number[]): number {
         return nimg[i] * e[0] + nimg[i + 1] * e[1] + nimg[i + 2] * e[2] + nimg[i + 3] * e[3];
     }
 
+    /* @internal */
     private m4MultVec(m: number[], v: number[]): number[] {
         return [
             m[0] * v[0] + m[1] * v[1] + m[2] * v[2] + m[3] * v[3],
@@ -846,13 +866,18 @@ export class PngEncoder {
             m[12] * v[0] + m[13] * v[1] + m[14] * v[2] + m[15] * v[3]
         ];
     }
+
+    /* @internal */
     private m4Dot(x: number[], y: number[]): number {
         return x[0] * y[0] + x[1] * y[1] + x[2] * y[2] + x[3] * y[3];
     }
+
+    /* @internal */
     private m4Sml(a: number, y: number[]): number[] {
         return [a * y[0], a * y[1], a * y[2], a * y[3]];
     }
 
+    /* @internal */
     private alphaMul(img: Uint8Array, roundA: number): Uint8Array {
         const nimg = new Uint8Array(img.length);
         const area = img.length >> 2;
@@ -872,6 +897,7 @@ export class PngEncoder {
     }
 }
 
+/* @internal */
 type Frame = {
     img: any;
     rect: { width: number; height: number; x: number; y: number };
@@ -884,6 +910,7 @@ type Frame = {
     ctype?: number;
 };
 
+/* @internal */
 type Leaf = {
     i0: number;
     i1: number;
@@ -902,6 +929,7 @@ type Leaf = {
     right: Leaf;
 };
 
+/* @internal */
 type ImageData = {
     ctype: number;
     depth: number;

@@ -15,7 +15,7 @@ describe("TextRenderer", () => {
     describe("renderRaw", () => {
         it("can render data", async () => {
             const qr = new QR();
-            qr.addData("This is a test");
+            qr.addText("This is a test");
             const data = qr.generate();
 
             const obj = new TextRenderer();

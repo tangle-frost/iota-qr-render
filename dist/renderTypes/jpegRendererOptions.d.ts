@@ -12,7 +12,7 @@ export declare class JpegRendererOptions {
      */
     background?: Color;
     /**
-     * The style to apply for the html element.
+     * The css class to apply for the html element.
      */
-    elementStyle?: string;
+    cssClass?: string;
 }

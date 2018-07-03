@@ -25,5 +25,5 @@ export declare class SvgRenderer implements IQRRenderer {
      * @param marginSize The margin size in pixels to leave around the qr code.
      * @returns The object rendered as an html element.
      */
-    renderHtml(cellData: QRCellData, cellSize?: number, marginSize?: number): Promise<HTMLElement>;
+    renderHtml(cellData: QRCellData, cellSize?: number, marginSize?: number): Promise<SVGSVGElement>;
 }

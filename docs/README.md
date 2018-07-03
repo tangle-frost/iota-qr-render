@@ -44,9 +44,7 @@
 
 **ΤFrame**: *`object`*
 
-*Defined in images/pngEncoder.ts:7*
-
-PNG Encoder. Based on [https://github.com/photopea/UPNG.js](https://github.com/photopea/UPNG.js)
+*Defined in images/pngEncoder.ts:901*
 
 #### Type declaration
 
@@ -83,7 +81,7 @@ ___
 
 **ΤImageData**: *`object`*
 
-*Defined in images/pngEncoder.ts:37*
+*Defined in images/pngEncoder.ts:933*
 
 #### Type declaration
 
@@ -104,7 +102,7 @@ ___
 
 **ΤLeaf**: *`object`*
 
-*Defined in images/pngEncoder.ts:19*
+*Defined in images/pngEncoder.ts:914*
 
 #### Type declaration
 

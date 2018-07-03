@@ -16,7 +16,7 @@ describe("PngRenderer", () => {
     describe("renderRaw", () => {
         it("can render data as png", async () => {
             const qr = new QR();
-            qr.addData("This is a test");
+            qr.addText("This is a test");
             const data = qr.generate();
 
             const obj = new PngRenderer({ foreground: Color.fromHex("#FFFF0000"), background: Color.fromHex("#FF00FF00") });

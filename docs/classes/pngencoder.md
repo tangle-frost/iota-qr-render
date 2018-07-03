@@ -2,37 +2,19 @@
 
 # Class: PngEncoder
 
+PNG Encoder. Based on [https://github.com/photopea/UPNG.js](https://github.com/photopea/UPNG.js)
+
 ## Hierarchy
 
 **PngEncoder**
 
 ## Index
 
-### Constructors
-
-* [constructor](pngencoder.md#constructor)
-
 ### Methods
 
 * [encode](pngencoder.md#encode)
 
 ---
-
-## Constructors
-
-<a id="constructor"></a>
-
-###  constructor
-
-⊕ **new PngEncoder**(): [PngEncoder](pngencoder.md)
-
-*Defined in images/pngEncoder.ts:45*
-
-Create a new instance of PngEncoder.
-
-**Returns:** [PngEncoder](pngencoder.md)
-
-___
 
 ## Methods
 
@@ -42,17 +24,20 @@ ___
 
 ▸ **encode**(bufs: *`ArrayBuffer`[]*, w: *`number`*, h: *`number`*): `Uint8Array`
 
-*Defined in images/pngEncoder.ts:52*
+*Defined in images/pngEncoder.ts:15*
+
+Encode the image frames to png.
 
 **Parameters:**
 
-| Param | Type |
-| ------ | ------ |
-| bufs | `ArrayBuffer`[] |
-| w | `number` |
-| h | `number` |
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| bufs | `ArrayBuffer`[] |  The frame buffers to encode. |
+| w | `number` |  The image width. |
+| h | `number` |  The image height. |
 
 **Returns:** `Uint8Array`
+The data for the image.
 
 ___
 

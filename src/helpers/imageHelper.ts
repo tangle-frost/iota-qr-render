@@ -17,8 +17,11 @@ export class ImageHelper {
 
         let imageSource;
 
-        if (ObjectHelper.isType(data, Uint8Array) || StringHelper.isString(data)) {
+        if (ObjectHelper.isType(data, Uint8Array)) {
             const base64Data = btoa(String.fromCharCode.apply(null, data));
+            imageSource = `data:${mimeType};base64,${base64Data}`;
+        } else if (StringHelper.isString(data)) {
+            const base64Data = btoa(data);
             imageSource = `data:${mimeType};base64,${base64Data}`;
         } else {
             throw new Error("The data must be a Uint8Array or string");

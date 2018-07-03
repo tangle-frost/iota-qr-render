@@ -33,7 +33,7 @@ Class to render qr data as svg.
 
 ⊕ **new SvgRenderer**(options?: *[SvgRendererOptions](svgrendereroptions.md)*): [SvgRenderer](svgrenderer.md)
 
-*Defined in renderTypes/svgRenderer.ts:14*
+*Defined in renderTypes/svgRenderer.ts:13*
 
 Create a new instance of Svg renderer.
 
@@ -53,11 +53,11 @@ ___
 
 ###  renderHtml
 
-▸ **renderHtml**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`<`HTMLElement`>
+▸ **renderHtml**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`<`SVGSVGElement`>
 
 *Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderHtml](../interfaces/iqrrenderer.md#renderhtml)*
 
-*Defined in renderTypes/svgRenderer.ts:69*
+*Defined in renderTypes/svgRenderer.ts:48*
 
 Render the cell data as an HTML element.
 
@@ -69,7 +69,7 @@ Render the cell data as an HTML element.
 | `Default value` cellSize | `number` | 5 |  The size in pixels of each cell. |
 | `Default value` marginSize | `number` | 10 |  The margin size in pixels to leave around the qr code. |
 
-**Returns:** `Promise`<`HTMLElement`>
+**Returns:** `Promise`<`SVGSVGElement`>
 The object rendered as an html element.
 
 ___
@@ -81,7 +81,7 @@ ___
 
 *Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderRaw](../interfaces/iqrrenderer.md#renderraw)*
 
-*Defined in renderTypes/svgRenderer.ts:34*
+*Defined in renderTypes/svgRenderer.ts:33*
 
 Render the QR code data as an SVG.
 

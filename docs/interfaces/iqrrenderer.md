@@ -32,7 +32,7 @@ Interface which defines a QR Code Renderer.
 
 ###  renderHtml
 
-▸ **renderHtml**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`<`HTMLElement`>
+▸ **renderHtml**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`<`Element`>
 
 *Defined in models/IQRRenderer.ts:24*
 
@@ -46,7 +46,7 @@ Render the cell data as an HTML element.
 | `Optional` cellSize | `number` |  The size in pixels of each cell. |
 | `Optional` marginSize | `number` |  The margin size in pixels to leave around the qr code. |
 
-**Returns:** `Promise`<`HTMLElement`>
+**Returns:** `Promise`<`Element`>
 The object rendered as an html element.
 
 ___

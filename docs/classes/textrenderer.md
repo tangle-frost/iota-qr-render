@@ -53,7 +53,7 @@ ___
 
 ###  renderHtml
 
-▸ **renderHtml**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`<`HTMLElement`>
+▸ **renderHtml**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`<`Element`>
 
 *Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderHtml](../interfaces/iqrrenderer.md#renderhtml)*
 
@@ -69,7 +69,7 @@ Render the cell data as an HTML element.
 | `Default value` cellSize | `number` | 1 |  The size in pixels of each cell. |
 | `Default value` marginSize | `number` | 2 |  The margin size in pixels to leave around the qr code. |
 
-**Returns:** `Promise`<`HTMLElement`>
+**Returns:** `Promise`<`Element`>
 The object rendered as an html element.
 
 ___
