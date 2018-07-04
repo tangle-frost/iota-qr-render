@@ -39,7 +39,7 @@ export class TextRenderer implements IQRRenderer {
         }
 
         if (!NumberHelper.isNumber(marginSize) || marginSize < 0) {
-            throw new Error(`The marginSize must be a number > 0, it is ${marginSize}`);
+            throw new Error(`The marginSize must be a number >= 0, it is ${marginSize}`);
         }
 
         let text = "";

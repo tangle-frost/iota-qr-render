@@ -51,7 +51,7 @@ export class CanvasRenderer implements IQRRenderer {
         }
 
         if (!NumberHelper.isNumber(marginSize) || marginSize < 0) {
-            throw new Error(`The marginSize must be a number > 0, it is ${marginSize}`);
+            throw new Error(`The marginSize must be a number >= 0, it is ${marginSize}`);
         }
 
         const dimensions = cellData.length * cellSize + (2 * marginSize);

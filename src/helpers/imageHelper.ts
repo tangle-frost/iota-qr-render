@@ -18,7 +18,12 @@ export class ImageHelper {
         let imageSource;
 
         if (ObjectHelper.isType(data, Uint8Array)) {
-            const base64Data = btoa(String.fromCharCode.apply(null, data));
+            let binary = "";
+            const len = data.length;
+            for (let i = 0; i < len; i++) {
+                binary += String.fromCharCode(<number>data[i]);
+            }
+            const base64Data = btoa(binary);
             imageSource = `data:${mimeType};base64,${base64Data}`;
         } else if (StringHelper.isString(data)) {
             const base64Data = btoa(data);

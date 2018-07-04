@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">23.08% </span>
+        <span class="strong">17.65% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/13</span>
+        <span class='fraction'>3/17</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/1</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">23.08% </span>
+        <span class="strong">17.65% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/13</span>
+        <span class='fraction'>3/17</span>
       </div>
     </div>
     <p class="quiet">
@@ -78,7 +78,12 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -98,6 +103,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -130,7 +140,12 @@ export class ImageHelper {
         let imageSource;
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (ObjectHelper.isType(data, Uint8Array)) {</span>
-            const base64Data = <span class="cstat-no" title="statement not covered" >btoa(String.fromCharCode.apply(null, data));</span>
+            let binary = <span class="cstat-no" title="statement not covered" >"";</span>
+            const len = <span class="cstat-no" title="statement not covered" >data.length;</span>
+<span class="cstat-no" title="statement not covered" >            for (let i = 0; i &lt; len; i++) {</span>
+<span class="cstat-no" title="statement not covered" >                binary += String.fromCharCode(&lt;number&gt;data[i]);</span>
+            }
+            const base64Data = <span class="cstat-no" title="statement not covered" >btoa(binary);</span>
 <span class="cstat-no" title="statement not covered" >            imageSource = `data:${mimeType};base64,${base64Data}`;</span>
         } else <span class="cstat-no" title="statement not covered" >if (StringHelper.isString(data)) {</span>
             const base64Data = <span class="cstat-no" title="statement not covered" >btoa(data);</span>
