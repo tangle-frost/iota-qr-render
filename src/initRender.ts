@@ -10,8 +10,8 @@ import { TextRenderer } from "./renderTypes/textRenderer";
 
 export function initRender(): void {
     QRRendererFactory.instance().register("canvas", (opts) => new CanvasRenderer(opts));
-    QRRendererFactory.instance().register("text", (opts) => new TextRenderer(opts));
+    QRRendererFactory.instance().register("txt", (opts) => new TextRenderer(opts));
     QRRendererFactory.instance().register("svg", (opts) => new SvgRenderer(opts));
-    QRRendererFactory.instance().register("jpeg", (opts) => new JpegRenderer(opts));
+    QRRendererFactory.instance().register("jpg", (opts) => new JpegRenderer(opts));
     QRRendererFactory.instance().register("png", (opts) => new PngRenderer(opts));
 }
