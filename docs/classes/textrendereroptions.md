@@ -26,7 +26,7 @@ Options for Text renderer.
 
 **● cssClass**: *`string`*
 
-*Defined in renderTypes/textRendererOptions.ts:16*
+*Defined in [renderTypes/textRendererOptions.ts:16](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/textRendererOptions.ts#L16*
 
 The css class to apply for the html element.
 
@@ -37,7 +37,7 @@ ___
 
 **● offChar**: *`string`*
 
-*Defined in renderTypes/textRendererOptions.ts:12*
+*Defined in [renderTypes/textRendererOptions.ts:12](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/textRendererOptions.ts#L12*
 
 The character to use for off pixels.
 
@@ -48,7 +48,7 @@ ___
 
 **● onChar**: *`string`*
 
-*Defined in renderTypes/textRendererOptions.ts:8*
+*Defined in [renderTypes/textRendererOptions.ts:8](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/textRendererOptions.ts#L8*
 
 The character to use for on pixels.
 

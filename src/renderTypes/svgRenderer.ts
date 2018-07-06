@@ -1,6 +1,7 @@
 import { Color } from "@tangle-frost/iota-core/dist/data/color";
 import { ArrayHelper } from "@tangle-frost/iota-core/dist/helpers/arrayHelper";
 import { NumberHelper } from "@tangle-frost/iota-core/dist/helpers/numberHelper";
+import { ObjectHelper } from "@tangle-frost/iota-core/dist/helpers/objectHelper";
 import { QRCellData } from "@tangle-frost/iota-qr-core/dist/models/qrCellData";
 import { IQRRenderer } from "../models/IQRRenderer";
 import { SvgRendererOptions } from "./svgRendererOptions";
@@ -21,6 +22,14 @@ export class SvgRenderer implements IQRRenderer {
         this._options.foreground = this._options.foreground || Color.fromHex("#000000");
         this._options.background = this._options.background || Color.fromHex("#FFFFFF");
         this._options.cssClass = this._options.cssClass || "qr-svg";
+
+        if (!ObjectHelper.isType(this._options.foreground, Color)) {
+            throw new Error("The options foreground is not a Color object");
+        }
+
+        if (!ObjectHelper.isType(this._options.background, Color)) {
+            throw new Error("The options background is not a Color object");
+        }
     }
 
     /**

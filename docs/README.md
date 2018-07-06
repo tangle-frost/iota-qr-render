@@ -44,7 +44,7 @@
 
 **ΤFrame**: *`object`*
 
-*Defined in images/pngEncoder.ts:901*
+*Defined in [images/pngEncoder.ts:901](https://github.com/tangle-frost/iota-qr-render/tree/master/src/images/pngEncoder.ts#L901*
 
 #### Type declaration
 
@@ -81,7 +81,7 @@ ___
 
 **ΤImageData**: *`object`*
 
-*Defined in images/pngEncoder.ts:933*
+*Defined in [images/pngEncoder.ts:933](https://github.com/tangle-frost/iota-qr-render/tree/master/src/images/pngEncoder.ts#L933*
 
 #### Type declaration
 
@@ -102,7 +102,7 @@ ___
 
 **ΤLeaf**: *`object`*
 
-*Defined in images/pngEncoder.ts:914*
+*Defined in [images/pngEncoder.ts:914](https://github.com/tangle-frost/iota-qr-render/tree/master/src/images/pngEncoder.ts#L914*
 
 #### Type declaration
 
@@ -150,7 +150,7 @@ ___
 
 ▸ **initRender**(): `void`
 
-*Defined in initRender.ts:11*
+*Defined in [initRender.ts:11](https://github.com/tangle-frost/iota-qr-render/tree/master/src/initRender.ts#L11*
 
 **Returns:** `void`
 

@@ -33,7 +33,7 @@ Class to render qr data as t3xt.
 
 ⊕ **new TextRenderer**(options?: *[TextRendererOptions](textrendereroptions.md)*): [TextRenderer](textrenderer.md)
 
-*Defined in renderTypes/textRenderer.ts:12*
+*Defined in [renderTypes/textRenderer.ts:12](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/textRenderer.ts#L12*
 
 Create a new instance of Text renderer.
 
@@ -57,7 +57,7 @@ ___
 
 *Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderHtml](../interfaces/iqrrenderer.md#renderhtml)*
 
-*Defined in renderTypes/textRenderer.ts:78*
+*Defined in [renderTypes/textRenderer.ts:78](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/textRenderer.ts#L78*
 
 Render the cell data as an HTML element.
 
@@ -81,7 +81,7 @@ ___
 
 *Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderRaw](../interfaces/iqrrenderer.md#renderraw)*
 
-*Defined in renderTypes/textRenderer.ts:32*
+*Defined in [renderTypes/textRenderer.ts:32](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/textRenderer.ts#L32*
 
 Render the QR code data as text.
 

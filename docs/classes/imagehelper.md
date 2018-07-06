@@ -24,7 +24,7 @@ Class to help with manipulating image data.
 
 ▸ **dataToImageSource**(mimeType: *`string`*, data: * `Uint8Array` &#124; `string`*): `string`
 
-*Defined in helpers/imageHelper.ts:13*
+*Defined in [helpers/imageHelper.ts:13](https://github.com/tangle-frost/iota-qr-render/tree/master/src/helpers/imageHelper.ts#L13*
 
 Convert the data to an image source.
 

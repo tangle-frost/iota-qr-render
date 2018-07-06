@@ -26,7 +26,7 @@ Options for Jpeg renderer.
 
 **● background**: *`Color`*
 
-*Defined in renderTypes/jpegRendererOptions.ts:15*
+*Defined in [renderTypes/jpegRendererOptions.ts:15](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/jpegRendererOptions.ts#L15*
 
 The background colour.
 
@@ -37,7 +37,7 @@ ___
 
 **● cssClass**: *`string`*
 
-*Defined in renderTypes/jpegRendererOptions.ts:19*
+*Defined in [renderTypes/jpegRendererOptions.ts:19](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/jpegRendererOptions.ts#L19*
 
 The css class to apply for the html element.
 
@@ -48,7 +48,7 @@ ___
 
 **● foreground**: *`Color`*
 
-*Defined in renderTypes/jpegRendererOptions.ts:10*
+*Defined in [renderTypes/jpegRendererOptions.ts:10](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/jpegRendererOptions.ts#L10*
 
 The foreground colour.
 

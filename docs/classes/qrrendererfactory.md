@@ -77,7 +77,7 @@ ___
 
 ▸ **getInstance**(): `FactoryBase`<[IQRRenderer](../interfaces/iqrrenderer.md)>
 
-*Defined in factories/qrRendererFactory.ts:31*
+*Defined in [factories/qrRendererFactory.ts:31](https://github.com/tangle-frost/iota-qr-render/tree/master/src/factories/qrRendererFactory.ts#L31*
 
 **Returns:** `FactoryBase`<[IQRRenderer](../interfaces/iqrrenderer.md)>
 
@@ -147,7 +147,7 @@ ___
 
 ▸ **instance**(): `FactoryBase`<[IQRRenderer](../interfaces/iqrrenderer.md)>
 
-*Defined in factories/qrRendererFactory.ts:23*
+*Defined in [factories/qrRendererFactory.ts:23](https://github.com/tangle-frost/iota-qr-render/tree/master/src/factories/qrRendererFactory.ts#L23*
 
 Get the instance of the factory.
 

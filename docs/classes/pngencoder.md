@@ -24,7 +24,7 @@ PNG Encoder. Based on [https://github.com/photopea/UPNG.js](https://github.com/p
 
 ▸ **encode**(bufs: *`ArrayBuffer`[]*, w: *`number`*, h: *`number`*): `Uint8Array`
 
-*Defined in images/pngEncoder.ts:15*
+*Defined in [images/pngEncoder.ts:15](https://github.com/tangle-frost/iota-qr-render/tree/master/src/images/pngEncoder.ts#L15*
 
 Encode the image frames to png.
 

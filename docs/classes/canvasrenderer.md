@@ -33,7 +33,7 @@ Class to render qr data as canvas.
 
 ⊕ **new CanvasRenderer**(options?: *[CanvasRendererOptions](canvasrendereroptions.md)*): [CanvasRenderer](canvasrenderer.md)
 
-*Defined in renderTypes/canvasRenderer.ts:13*
+*Defined in [renderTypes/canvasRenderer.ts:14](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/canvasRenderer.ts#L14*
 
 Create a new instance of Svg renderer.
 
@@ -57,7 +57,7 @@ ___
 
 *Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderHtml](../interfaces/iqrrenderer.md#renderhtml)*
 
-*Defined in renderTypes/canvasRenderer.ts:44*
+*Defined in [renderTypes/canvasRenderer.ts:53](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/canvasRenderer.ts#L53*
 
 Render the cell data as an HTML element.
 
@@ -81,7 +81,7 @@ ___
 
 *Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderRaw](../interfaces/iqrrenderer.md#renderraw)*
 
-*Defined in renderTypes/canvasRenderer.ts:33*
+*Defined in [renderTypes/canvasRenderer.ts:42](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/canvasRenderer.ts#L42*
 
 Render the QR code data as an canvas.
 

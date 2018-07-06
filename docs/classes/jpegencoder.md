@@ -28,7 +28,7 @@ JPEG Encoder. Based on JPEG encoder ported to JavaScript and optimized by Andrea
 
 ⊕ **new JpegEncoder**(): [JpegEncoder](jpegencoder.md)
 
-*Defined in images/jpegEncoder.ts:119*
+*Defined in [images/jpegEncoder.ts:119](https://github.com/tangle-frost/iota-qr-render/tree/master/src/images/jpegEncoder.ts#L119*
 
 Create a new instance of JpegEncoder.
 
@@ -44,7 +44,7 @@ ___
 
 ▸ **encode**(width: *`number`*, height: *`number`*, imageData: *`Uint8Array`*, quality: *`number`*): `Uint8Array`
 
-*Defined in images/jpegEncoder.ts:156*
+*Defined in [images/jpegEncoder.ts:156](https://github.com/tangle-frost/iota-qr-render/tree/master/src/images/jpegEncoder.ts#L156*
 
 Encode the image with the given quality.
 

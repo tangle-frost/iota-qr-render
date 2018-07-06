@@ -33,7 +33,7 @@ Class to render qr data as bitmap.
 
 ⊕ **new JpegRenderer**(options?: *[JpegRendererOptions](jpegrendereroptions.md)*): [JpegRenderer](jpegrenderer.md)
 
-*Defined in renderTypes/jpegRenderer.ts:15*
+*Defined in [renderTypes/jpegRenderer.ts:16](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/jpegRenderer.ts#L16*
 
 Create a new instance of Svg renderer.
 
@@ -57,7 +57,7 @@ ___
 
 *Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderHtml](../interfaces/iqrrenderer.md#renderhtml)*
 
-*Defined in renderTypes/jpegRenderer.ts:103*
+*Defined in [renderTypes/jpegRenderer.ts:112](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/jpegRenderer.ts#L112*
 
 Render the cell data as an HTML element.
 
@@ -81,7 +81,7 @@ ___
 
 *Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderRaw](../interfaces/iqrrenderer.md#renderraw)*
 
-*Defined in renderTypes/jpegRenderer.ts:35*
+*Defined in [renderTypes/jpegRenderer.ts:44](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/jpegRenderer.ts#L44*
 
 Render the QR code data as a bitmap.
 

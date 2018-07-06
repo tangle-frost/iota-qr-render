@@ -34,7 +34,7 @@ Interface which defines a QR Code Renderer.
 
 ▸ **renderHtml**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`<`Element`>
 
-*Defined in models/IQRRenderer.ts:24*
+*Defined in [models/IQRRenderer.ts:24](https://github.com/tangle-frost/iota-qr-render/tree/master/src/models/IQRRenderer.ts#L24*
 
 Render the cell data as an HTML element.
 
@@ -56,7 +56,7 @@ ___
 
 ▸ **renderRaw**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`< `Uint8Array` &#124; `string`>
 
-*Defined in models/IQRRenderer.ts:15*
+*Defined in [models/IQRRenderer.ts:15](https://github.com/tangle-frost/iota-qr-render/tree/master/src/models/IQRRenderer.ts#L15*
 
 Render the cell data with the given dimensions.
 

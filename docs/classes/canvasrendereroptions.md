@@ -26,7 +26,7 @@ Options for Canvas renderer.
 
 **● background**: *`Color`*
 
-*Defined in renderTypes/canvasRendererOptions.ts:14*
+*Defined in [renderTypes/canvasRendererOptions.ts:14](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/canvasRendererOptions.ts#L14*
 
 The background colour.
 
@@ -37,7 +37,7 @@ ___
 
 **● cssClass**: *`string`*
 
-*Defined in renderTypes/canvasRendererOptions.ts:18*
+*Defined in [renderTypes/canvasRendererOptions.ts:18](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/canvasRendererOptions.ts#L18*
 
 The css class to apply for the html element.
 
@@ -48,7 +48,7 @@ ___
 
 **● foreground**: *`Color`*
 
-*Defined in renderTypes/canvasRendererOptions.ts:10*
+*Defined in [renderTypes/canvasRendererOptions.ts:10](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/canvasRendererOptions.ts#L10*
 
 The foreground colour.
 

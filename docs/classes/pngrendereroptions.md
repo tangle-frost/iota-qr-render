@@ -26,7 +26,7 @@ Options for Png renderer.
 
 **● background**: *`Color`*
 
-*Defined in renderTypes/pngRendererOptions.ts:15*
+*Defined in [renderTypes/pngRendererOptions.ts:15](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/pngRendererOptions.ts#L15*
 
 The background colour.
 
@@ -37,7 +37,7 @@ ___
 
 **● cssClass**: *`string`*
 
-*Defined in renderTypes/pngRendererOptions.ts:19*
+*Defined in [renderTypes/pngRendererOptions.ts:19](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/pngRendererOptions.ts#L19*
 
 The css class to apply for the html element.
 
@@ -48,7 +48,7 @@ ___
 
 **● foreground**: *`Color`*
 
-*Defined in renderTypes/pngRendererOptions.ts:10*
+*Defined in [renderTypes/pngRendererOptions.ts:10](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/pngRendererOptions.ts#L10*
 
 The foreground colour.
 
