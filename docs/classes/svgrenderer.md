@@ -20,8 +20,10 @@ Class to render qr data as svg.
 
 ### Methods
 
+* [renderContent](svgrenderer.md#rendercontent)
 * [renderHtml](svgrenderer.md#renderhtml)
 * [renderRaw](svgrenderer.md#renderraw)
+* [renderWrapper](svgrenderer.md#renderwrapper)
 
 ---
 
@@ -49,6 +51,28 @@ ___
 
 ## Methods
 
+<a id="rendercontent"></a>
+
+###  renderContent
+
+▸ **renderContent**(cellData: *`boolean`[][]*, cellSize: *`number`*, marginSize: *`number`*): `object`
+
+*Defined in [renderTypes/svgRenderer.ts:74](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L74*
+
+Render the internal content of the svg.
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| cellData | `boolean`[][] |  The cell data to render. |
+| cellSize | `number` |  The size of the cell. |
+| marginSize | `number` |  The size of the margin. |
+
+**Returns:** `object`
+The dimension and content of the svg.
+
+___
 <a id="renderhtml"></a>
 
 ###  renderHtml
@@ -57,7 +81,7 @@ ___
 
 *Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderHtml](../interfaces/iqrrenderer.md#renderhtml)*
 
-*Defined in [renderTypes/svgRenderer.ts:57](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L57*
+*Defined in [renderTypes/svgRenderer.ts:54](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L54*
 
 Render the cell data as an HTML element.
 
@@ -94,6 +118,29 @@ Render the QR code data as an SVG.
 | `Default value` marginSize | `number` | 10 |  The margin to keep around the qr code. |
 
 **Returns:** `Promise`<`string`>
+The SVG content.
+
+___
+<a id="renderwrapper"></a>
+
+###  renderWrapper
+
+▸ **renderWrapper**(width: *`number`*, height: *`number`*, content: *`string`*, includeXmlDeclaration: *`boolean`*): `string`
+
+*Defined in [renderTypes/svgRenderer.ts:109](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L109*
+
+Wrap svg content with outer xml.
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| width | `number` |  The width of the svg. |
+| height | `number` |  The height of the svg. |
+| content | `string` |  The inner content of the svg. |
+| includeXmlDeclaration | `boolean` |  Include an xml declaration at the start of the content |
+
+**Returns:** `string`
 The SVG content.
 
 ___

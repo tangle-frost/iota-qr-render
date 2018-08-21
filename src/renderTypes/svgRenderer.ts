@@ -40,11 +40,8 @@ export class SvgRenderer implements IQRRenderer {
      * @returns The SVG content.
      */
     public async renderRaw(cellData: QRCellData, cellSize: number = 5, marginSize: number = 10): Promise<string> {
-        const rendered = this.internalRender(cellData, cellSize, marginSize);
-        let text = `<svg width="${rendered.dimensions}" height="${rendered.dimensions}" xmlns="http://www.w3.org/2000/svg">\n`;
-        text += rendered.content;
-        text += `</svg>`;
-        return text;
+        const rendered = this.renderContent(cellData, cellSize, marginSize);
+        return this.renderWrapper(rendered.width, rendered.height, rendered.content, false);
     }
 
     /**
@@ -55,11 +52,11 @@ export class SvgRenderer implements IQRRenderer {
      * @returns The object rendered as an html element.
      */
     public async renderHtml(cellData: QRCellData, cellSize: number = 5, marginSize: number = 10): Promise<SVGSVGElement> {
-        const rendered = this.internalRender(cellData, cellSize, marginSize);
+        const rendered = this.renderContent(cellData, cellSize, marginSize);
 
         const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        svg.setAttribute("width", rendered.dimensions.toString());
-        svg.setAttribute("height", rendered.dimensions.toString());
+        svg.setAttribute("width", `${rendered.width}px`);
+        svg.setAttribute("height", `${rendered.height}px`);
         svg.classList.add(this._options.cssClass);
         // tslint:disable-next-line:no-inner-html
         svg.innerHTML = rendered.content;
@@ -67,8 +64,14 @@ export class SvgRenderer implements IQRRenderer {
         return svg;
     }
 
-    /* @internal */
-    private internalRender(cellData: boolean[][], cellSize: number, marginSize: number): { dimensions: number; content: string } {
+    /**
+     * Render the internal content of the svg.
+     * @param cellData The cell data to render.
+     * @param cellSize The size of the cell.
+     * @param marginSize The size of the margin.
+     * @returns The dimension and content of the svg.
+     */
+    public renderContent(cellData: boolean[][], cellSize: number, marginSize: number): { width: number; height: number; content: string } {
         if (!ArrayHelper.isArray(cellData)) {
             throw new Error("The cellData must be of type QRCellData");
         }
@@ -82,14 +85,35 @@ export class SvgRenderer implements IQRRenderer {
         }
 
         const dimensions = cellData.length * cellSize + (2 * marginSize);
-        let text = `<rect x="0" y="0" width="${dimensions}" height="${dimensions}" fill="${this._options.background.hex()}" />\n`;
+        let content = `<rect x="0" y="0" width="${dimensions}" height="${dimensions}" fill="${this._options.background.hex()}" />`;
+        content += `<g fill="${this._options.foreground.hex()}">`;
         for (let x = 0; x < cellData.length; x++) {
             for (let y = 0; y < cellData[x].length; y++) {
                 if (cellData[x][y]) {
-                    text += `<rect x="${x * cellSize + marginSize}" y="${y * cellSize + marginSize}" width="${cellSize}" height="${cellSize}" fill="${this._options.foreground.hex()}" />\n`;
+                    content += `<rect x="${x * cellSize + marginSize}" y="${y * cellSize + marginSize}" width="${cellSize}" height="${cellSize}" />`;
                 }
             }
         }
-        return { dimensions, content: text };
+        content += `</g>`;
+        return { width: dimensions, height: dimensions, content: content };
+    }
+
+    /**
+     * Wrap svg content with outer xml.
+     * @param width The width of the svg.
+     * @param height The height of the svg.
+     * @param content The inner content of the svg.
+     * @param includeXmlDeclaration Include an xml declaration at the start of the content
+     * @returns The SVG content.
+     */
+    public renderWrapper(width: number, height: number, content: string, includeXmlDeclaration: boolean): string {
+        let text = ``;
+        if (includeXmlDeclaration) {
+            text += `<?xml version="1.0" standalone="no"?>`;
+        }
+        text += `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">`;
+        text += content;
+        text += `</svg>`;
+        return text;
     }
 }
