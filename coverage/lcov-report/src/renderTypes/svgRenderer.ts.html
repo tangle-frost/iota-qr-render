@@ -207,6 +207,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -265,25 +284,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Color } from "@tangle-frost/iota-core/dist/data/color";
 import { ArrayHelper } from "@tangle-frost/iota-core/dist/helpers/arrayHelper";
 import { NumberHelper } from "@tangle-frost/iota-core/dist/helpers/numberHelper";
@@ -319,6 +319,25 @@ export class SvgRenderer implements IQRRenderer {
     }
 &nbsp;
     /**
+     * Wrap svg content with outer xml.
+     * @param width The width of the svg.
+     * @param height The height of the svg.
+     * @param content The inner content of the svg.
+     * @param includeXmlDeclaration Include an xml declaration at the start of the content
+     * @returns The SVG content.
+     */
+    public static renderWrapper(width: number, height: number, content: string, includeXmlDeclaration: boolean): string {
+        let text = ``;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (includeXmlDeclaration) {
+<span class="cstat-no" title="statement not covered" >            text += `&lt;?xml version="1.0" standalone="no"?&gt;`;</span>
+        }
+        text += `&lt;svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg"&gt;`;
+        text += content;
+        text += `&lt;/svg&gt;`;
+        return text;
+    }
+&nbsp;
+    /**
      * Render the QR code data as an SVG.
      * @param cellData The cell data for the QR code.
      * @param cellSize The size of each cell.
@@ -327,7 +346,7 @@ export class SvgRenderer implements IQRRenderer {
      */
     public async renderRaw(cellData: QRCellData, cellSize: number = 5, marginSize: number = 10): Promise&lt;string&gt; {
         const rendered = this.renderContent(cellData, cellSize, marginSize);
-        return this.renderWrapper(rendered.width, rendered.height, rendered.content, false);
+        return SvgRenderer.renderWrapper(rendered.width, rendered.height, rendered.content, false);
     }
 &nbsp;
     /**
@@ -372,35 +391,16 @@ export class SvgRenderer implements IQRRenderer {
 &nbsp;
         const dimensions = cellData.length * cellSize + (2 * marginSize);
         let content = `&lt;rect x="0" y="0" width="${dimensions}" height="${dimensions}" fill="${this._options.background.hex()}" /&gt;`;
-        content += `&lt;g fill="${this._options.foreground.hex()}"&gt;`;
+        let pathContent = "";
         for (let x = 0; x &lt; cellData.length; x++) {
             for (let y = 0; y &lt; cellData[x].length; y++) {
                 if (cellData[x][y]) {
-                    content += `&lt;rect x="${x * cellSize + marginSize}" y="${y * cellSize + marginSize}" width="${cellSize}" height="${cellSize}" /&gt;`;
+                    pathContent += `M${x * cellSize + marginSize},${y * cellSize + marginSize} h${cellSize} v${cellSize} h-${cellSize}z `;
                 }
             }
         }
-        content += `&lt;/g&gt;`;
+        content += `&lt;path fill="${this._options.foreground.hex()}" d="${pathContent.trim()}"/&gt;`;
         return { width: dimensions, height: dimensions, content: content };
-    }
-&nbsp;
-    /**
-     * Wrap svg content with outer xml.
-     * @param width The width of the svg.
-     * @param height The height of the svg.
-     * @param content The inner content of the svg.
-     * @param includeXmlDeclaration Include an xml declaration at the start of the content
-     * @returns The SVG content.
-     */
-    public renderWrapper(width: number, height: number, content: string, includeXmlDeclaration: boolean): string {
-        let text = ``;
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (includeXmlDeclaration) {
-<span class="cstat-no" title="statement not covered" >            text += `&lt;?xml version="1.0" standalone="no"?&gt;`;</span>
-        }
-        text += `&lt;svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg"&gt;`;
-        text += content;
-        text += `&lt;/svg&gt;`;
-        return text;
     }
 }
 &nbsp;</pre></td></tr>

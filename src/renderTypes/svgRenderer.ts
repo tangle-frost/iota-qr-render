@@ -33,6 +33,25 @@ export class SvgRenderer implements IQRRenderer {
     }
 
     /**
+     * Wrap svg content with outer xml.
+     * @param width The width of the svg.
+     * @param height The height of the svg.
+     * @param content The inner content of the svg.
+     * @param includeXmlDeclaration Include an xml declaration at the start of the content
+     * @returns The SVG content.
+     */
+    public static renderWrapper(width: number, height: number, content: string, includeXmlDeclaration: boolean): string {
+        let text = ``;
+        if (includeXmlDeclaration) {
+            text += `<?xml version="1.0" standalone="no"?>`;
+        }
+        text += `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">`;
+        text += content;
+        text += `</svg>`;
+        return text;
+    }
+
+    /**
      * Render the QR code data as an SVG.
      * @param cellData The cell data for the QR code.
      * @param cellSize The size of each cell.
@@ -41,7 +60,7 @@ export class SvgRenderer implements IQRRenderer {
      */
     public async renderRaw(cellData: QRCellData, cellSize: number = 5, marginSize: number = 10): Promise<string> {
         const rendered = this.renderContent(cellData, cellSize, marginSize);
-        return this.renderWrapper(rendered.width, rendered.height, rendered.content, false);
+        return SvgRenderer.renderWrapper(rendered.width, rendered.height, rendered.content, false);
     }
 
     /**
@@ -86,34 +105,15 @@ export class SvgRenderer implements IQRRenderer {
 
         const dimensions = cellData.length * cellSize + (2 * marginSize);
         let content = `<rect x="0" y="0" width="${dimensions}" height="${dimensions}" fill="${this._options.background.hex()}" />`;
-        content += `<g fill="${this._options.foreground.hex()}">`;
+        let pathContent = "";
         for (let x = 0; x < cellData.length; x++) {
             for (let y = 0; y < cellData[x].length; y++) {
                 if (cellData[x][y]) {
-                    content += `<rect x="${x * cellSize + marginSize}" y="${y * cellSize + marginSize}" width="${cellSize}" height="${cellSize}" />`;
+                    pathContent += `M${x * cellSize + marginSize},${y * cellSize + marginSize} h${cellSize} v${cellSize} h-${cellSize}z `;
                 }
             }
         }
-        content += `</g>`;
+        content += `<path fill="${this._options.foreground.hex()}" d="${pathContent.trim()}"/>`;
         return { width: dimensions, height: dimensions, content: content };
-    }
-
-    /**
-     * Wrap svg content with outer xml.
-     * @param width The width of the svg.
-     * @param height The height of the svg.
-     * @param content The inner content of the svg.
-     * @param includeXmlDeclaration Include an xml declaration at the start of the content
-     * @returns The SVG content.
-     */
-    public renderWrapper(width: number, height: number, content: string, includeXmlDeclaration: boolean): string {
-        let text = ``;
-        if (includeXmlDeclaration) {
-            text += `<?xml version="1.0" standalone="no"?>`;
-        }
-        text += `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">`;
-        text += content;
-        text += `</svg>`;
-        return text;
     }
 }

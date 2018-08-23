@@ -57,7 +57,7 @@ ___
 
 ▸ **renderContent**(cellData: *`boolean`[][]*, cellSize: *`number`*, marginSize: *`number`*): `object`
 
-*Defined in [renderTypes/svgRenderer.ts:74](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L74*
+*Defined in [renderTypes/svgRenderer.ts:93](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L93*
 
 Render the internal content of the svg.
 
@@ -81,7 +81,7 @@ ___
 
 *Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderHtml](../interfaces/iqrrenderer.md#renderhtml)*
 
-*Defined in [renderTypes/svgRenderer.ts:54](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L54*
+*Defined in [renderTypes/svgRenderer.ts:73](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L73*
 
 Render the cell data as an HTML element.
 
@@ -105,7 +105,7 @@ ___
 
 *Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderRaw](../interfaces/iqrrenderer.md#renderraw)*
 
-*Defined in [renderTypes/svgRenderer.ts:42](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L42*
+*Defined in [renderTypes/svgRenderer.ts:61](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L61*
 
 Render the QR code data as an SVG.
 
@@ -123,11 +123,11 @@ The SVG content.
 ___
 <a id="renderwrapper"></a>
 
-###  renderWrapper
+### `<Static>` renderWrapper
 
 ▸ **renderWrapper**(width: *`number`*, height: *`number`*, content: *`string`*, includeXmlDeclaration: *`boolean`*): `string`
 
-*Defined in [renderTypes/svgRenderer.ts:109](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L109*
+*Defined in [renderTypes/svgRenderer.ts:43](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L43*
 
 Wrap svg content with outer xml.
 
