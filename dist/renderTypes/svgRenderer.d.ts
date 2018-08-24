@@ -47,4 +47,7 @@ export declare class SvgRenderer implements IQRRenderer {
         height: number;
         content: string;
     };
+    private renderGradientStops;
+    private renderLinearGradient;
+    private renderRadialGradient;
 }

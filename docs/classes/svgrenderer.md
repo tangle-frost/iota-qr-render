@@ -35,7 +35,7 @@ Class to render qr data as svg.
 
 ⊕ **new SvgRenderer**(options?: *[SvgRendererOptions](svgrendereroptions.md)*): [SvgRenderer](svgrenderer.md)
 
-*Defined in [renderTypes/svgRenderer.ts:14](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L14*
+*Defined in [renderTypes/svgRenderer.ts:16](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L16*
 
 Create a new instance of Svg renderer.
 
@@ -57,7 +57,7 @@ ___
 
 ▸ **renderContent**(cellData: *`boolean`[][]*, cellSize: *`number`*, marginSize: *`number`*): `object`
 
-*Defined in [renderTypes/svgRenderer.ts:93](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L93*
+*Defined in [renderTypes/svgRenderer.ts:113](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L113*
 
 Render the internal content of the svg.
 
@@ -81,7 +81,7 @@ ___
 
 *Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderHtml](../interfaces/iqrrenderer.md#renderhtml)*
 
-*Defined in [renderTypes/svgRenderer.ts:73](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L73*
+*Defined in [renderTypes/svgRenderer.ts:93](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L93*
 
 Render the cell data as an HTML element.
 
@@ -105,7 +105,7 @@ ___
 
 *Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderRaw](../interfaces/iqrrenderer.md#renderraw)*
 
-*Defined in [renderTypes/svgRenderer.ts:61](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L61*
+*Defined in [renderTypes/svgRenderer.ts:81](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L81*
 
 Render the QR code data as an SVG.
 
@@ -127,7 +127,7 @@ ___
 
 ▸ **renderWrapper**(width: *`number`*, height: *`number`*, content: *`string`*, includeXmlDeclaration: *`boolean`*): `string`
 
-*Defined in [renderTypes/svgRenderer.ts:43](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L43*
+*Defined in [renderTypes/svgRenderer.ts:63](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRenderer.ts#L63*
 
 Wrap svg content with outer xml.
 

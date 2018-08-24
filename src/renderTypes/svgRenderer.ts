@@ -1,4 +1,6 @@
 import { Color } from "@tangle-frost/iota-core/dist/data/color";
+import { LinearGradient } from "@tangle-frost/iota-core/dist/data/linearGradient";
+import { RadialGradient } from "@tangle-frost/iota-core/dist/data/radialGradient";
 import { ArrayHelper } from "@tangle-frost/iota-core/dist/helpers/arrayHelper";
 import { NumberHelper } from "@tangle-frost/iota-core/dist/helpers/numberHelper";
 import { ObjectHelper } from "@tangle-frost/iota-core/dist/helpers/objectHelper";
@@ -19,13 +21,31 @@ export class SvgRenderer implements IQRRenderer {
      */
     constructor(options?: SvgRendererOptions) {
         this._options = options || {};
-        this._options.foreground = this._options.foreground || Color.fromHex("#000000");
+        this._options.foregroundType = this._options.foregroundType || "solid";
+
+        if (this._options.foregroundType !== "solid" &&
+            this._options.foregroundType !== "linear" &&
+            this._options.foregroundType !== "radial") {
+            throw new Error("The options foregroundType must be solid, linear or radial");
+        }
+
+        if (this._options.foregroundType === "solid") {
+            this._options.foreground = this._options.foreground || Color.fromHex("#000000");
+            if (!ObjectHelper.isType(this._options.foreground, Color)) {
+                throw new Error("The options foreground is not a Color object");
+            }
+        } else if (this._options.foregroundType === "linear") {
+            if (!ObjectHelper.isType(this._options.foregroundLinear, LinearGradient)) {
+                throw new Error("The options foregroundLinear must be a LinearGradient object");
+            }
+        } else if (this._options.foregroundType === "radial") {
+            if (!ObjectHelper.isType(this._options.foregroundRadial, RadialGradient)) {
+                throw new Error("The options foregroundRadial must be a RadialGradient object");
+            }
+        }
+
         this._options.background = this._options.background || Color.fromHex("#FFFFFF");
         this._options.cssClass = this._options.cssClass || "qr-svg";
-
-        if (!ObjectHelper.isType(this._options.foreground, Color)) {
-            throw new Error("The options foreground is not a Color object");
-        }
 
         if (!ObjectHelper.isType(this._options.background, Color)) {
             throw new Error("The options background is not a Color object");
@@ -104,7 +124,23 @@ export class SvgRenderer implements IQRRenderer {
         }
 
         const dimensions = cellData.length * cellSize + (2 * marginSize);
-        let content = `<rect x="0" y="0" width="${dimensions}" height="${dimensions}" fill="${this._options.background.hex()}" />`;
+        let content = ``;
+        let fillRef = ``;
+
+        if (this._options.foregroundType === "linear" || this._options.foregroundType === "radial") {
+            fillRef = "url(#qrfill)";
+            content += `<defs>`;
+            if (this._options.foregroundType === "linear") {
+                content += this.renderLinearGradient(this._options.foregroundLinear, "qrfill");
+            } else {
+                content += this.renderRadialGradient(this._options.foregroundRadial, "qrfill");
+            }
+            content += `</defs>`;
+        } else {
+            fillRef = this._options.foreground.hex();
+        }
+
+        content += `<rect x="0" y="0" width="${dimensions}" height="${dimensions}" fill="${this._options.background.hex()}" />`;
         let pathContent = "";
         for (let x = 0; x < cellData.length; x++) {
             for (let y = 0; y < cellData[x].length; y++) {
@@ -113,7 +149,39 @@ export class SvgRenderer implements IQRRenderer {
                 }
             }
         }
-        content += `<path fill="${this._options.foreground.hex()}" d="${pathContent.trim()}"/>`;
+        content += `<path fill="${fillRef}" d="${pathContent.trim()}"/>`;
         return { width: dimensions, height: dimensions, content: content };
+    }
+
+    private renderGradientStops(stops: { color: Color; offsetPercent: number }[]): string {
+        let render = ``;
+        for (let i = 0; i < stops.length; i++) {
+            render += `<stop offset="${stops[i].offsetPercent}%" stop-color="${stops[i].color.hex()}"/>`;
+        }
+        return render;
+    }
+
+    private renderLinearGradient(gradient: LinearGradient, id: string): string {
+        let render = `<linearGradient id="${id}"`;
+        if (gradient.angle() !== undefined) {
+            render += ` gradientTransform="rotate(${gradient.angle()})"`;
+        }
+        render += `>${this.renderGradientStops(gradient.stops())}</linearGradient>`;
+        return render;
+    }
+
+    private renderRadialGradient(gradient: RadialGradient, id: string): string {
+        let render = `<radialGradient id="${id}"`;
+        if (gradient.offsetXPercent() !== undefined) {
+            render += ` cx="${gradient.offsetXPercent()}%"`;
+        }
+        if (gradient.offsetYPercent() !== undefined) {
+            render += ` cy="${gradient.offsetYPercent()}%"`;
+        }
+        if (gradient.radiusPercent() !== undefined) {
+            render += ` r="${gradient.radiusPercent()}%"`;
+        }
+        render += `>${this.renderGradientStops(gradient.stops())}</radialGradient>`;
+        return render;
     }
 }

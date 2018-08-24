@@ -15,6 +15,9 @@ Options for Svg renderer.
 * [background](svgrendereroptions.md#background)
 * [cssClass](svgrendereroptions.md#cssclass)
 * [foreground](svgrendereroptions.md#foreground)
+* [foregroundLinear](svgrendereroptions.md#foregroundlinear)
+* [foregroundRadial](svgrendereroptions.md#foregroundradial)
+* [foregroundType](svgrendereroptions.md#foregroundtype)
 
 ---
 
@@ -26,7 +29,7 @@ Options for Svg renderer.
 
 **● background**: *`Color`*
 
-*Defined in [renderTypes/svgRendererOptions.ts:14](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRendererOptions.ts#L14*
+*Defined in [renderTypes/svgRendererOptions.ts:28](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRendererOptions.ts#L28*
 
 The background colour.
 
@@ -37,7 +40,7 @@ ___
 
 **● cssClass**: *`string`*
 
-*Defined in [renderTypes/svgRendererOptions.ts:18](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRendererOptions.ts#L18*
+*Defined in [renderTypes/svgRendererOptions.ts:32](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRendererOptions.ts#L32*
 
 The css class to apply for the html element.
 
@@ -48,9 +51,43 @@ ___
 
 **● foreground**: *`Color`*
 
-*Defined in [renderTypes/svgRendererOptions.ts:10](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRendererOptions.ts#L10*
+*Defined in [renderTypes/svgRendererOptions.ts:16](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRendererOptions.ts#L16*
 
 The foreground colour.
+
+___
+<a id="foregroundlinear"></a>
+
+### `<Optional>` foregroundLinear
+
+**● foregroundLinear**: *`LinearGradient`*
+
+*Defined in [renderTypes/svgRendererOptions.ts:20](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRendererOptions.ts#L20*
+
+The foreground linear gradient.
+
+___
+<a id="foregroundradial"></a>
+
+### `<Optional>` foregroundRadial
+
+**● foregroundRadial**: *`RadialGradient`*
+
+*Defined in [renderTypes/svgRendererOptions.ts:24](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRendererOptions.ts#L24*
+
+The foreground radial gradient.
+
+___
+<a id="foregroundtype"></a>
+
+### `<Optional>` foregroundType
+
+**● foregroundType**: * "solid" &#124; "linear" &#124; "radial"
+*
+
+*Defined in [renderTypes/svgRendererOptions.ts:12](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRendererOptions.ts#L12*
+
+The foreground fill style.
 
 ___
 

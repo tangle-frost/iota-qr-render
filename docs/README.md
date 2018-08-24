@@ -42,7 +42,7 @@
 
 ###  Frame
 
-**ΤFrame**: *`object`*
+**Ƭ Frame**: *`object`*
 
 *Defined in [images/pngEncoder.ts:901](https://github.com/tangle-frost/iota-qr-render/tree/master/src/images/pngEncoder.ts#L901*
 
@@ -79,7 +79,7 @@ ___
 
 ###  ImageData
 
-**ΤImageData**: *`object`*
+**Ƭ ImageData**: *`object`*
 
 *Defined in [images/pngEncoder.ts:933](https://github.com/tangle-frost/iota-qr-render/tree/master/src/images/pngEncoder.ts#L933*
 
@@ -100,7 +100,7 @@ ___
 
 ###  Leaf
 
-**ΤLeaf**: *`object`*
+**Ƭ Leaf**: *`object`*
 
 *Defined in [images/pngEncoder.ts:914](https://github.com/tangle-frost/iota-qr-render/tree/master/src/images/pngEncoder.ts#L914*
 
