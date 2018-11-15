@@ -40,7 +40,7 @@ Render the cell data as an HTML element.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | cellData | `QRCellData` |  The cell data to render. |
 | `Optional` cellSize | `number` |  The size in pixels of each cell. |
@@ -62,7 +62,7 @@ Render the cell data with the given dimensions.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | cellData | `QRCellData` |  The cell data to render. |
 | `Optional` cellSize | `number` |  The size in pixels of each cell. |

@@ -50,7 +50,7 @@ Encode the image with the given quality.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | width | `number` |  The width of the image to encode. |
 | height | `number` |  The height of the image to encode. |

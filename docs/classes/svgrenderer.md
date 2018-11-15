@@ -41,7 +41,7 @@ Create a new instance of Svg renderer.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | `Optional` options | [SvgRendererOptions](svgrendereroptions.md) |  The options for the renderer. |
 
@@ -63,7 +63,7 @@ Render the internal content of the svg.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | cellData | `boolean`[][] |  The cell data to render. |
 | cellSize | `number` |  The size of the cell. |
@@ -87,7 +87,7 @@ Render the cell data as an HTML element.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | cellData | `QRCellData` | - |  The cell data to render. |
 | `Default value` cellSize | `number` | 5 |  The size in pixels of each cell. |
@@ -111,7 +111,7 @@ Render the QR code data as an SVG.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | cellData | `QRCellData` | - |  The cell data for the QR code. |
 | `Default value` cellSize | `number` | 5 |  The size of each cell. |
@@ -133,7 +133,7 @@ Wrap svg content with outer xml.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | width | `number` |  The width of the svg. |
 | height | `number` |  The height of the svg. |

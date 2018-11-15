@@ -39,7 +39,7 @@ Create a new instance of Text renderer.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | `Optional` options | [TextRendererOptions](textrendereroptions.md) |  The options for the renderer. |
 
@@ -63,7 +63,7 @@ Render the cell data as an HTML element.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | cellData | `QRCellData` | - |  The cell data to render. |
 | `Default value` cellSize | `number` | 1 |  The size in pixels of each cell. |
@@ -87,7 +87,7 @@ Render the QR code data as text.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | cellData | `QRCellData` | - |  The cell data for the QR code. |
 | `Default value` cellSize | `number` | 1 |  The size of each cell. |

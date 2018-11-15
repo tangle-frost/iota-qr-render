@@ -30,7 +30,7 @@ Encode the image frames to png.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | bufs | `ArrayBuffer`[] |  The frame buffers to encode. |
 | w | `number` |  The image width. |

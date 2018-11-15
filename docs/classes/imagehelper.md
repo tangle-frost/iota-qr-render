@@ -30,7 +30,7 @@ Convert the data to an image source.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | mimeType | `string` |  The mime type of the data. |
 | data |  `Uint8Array` &#124; `string`|  The source data. |

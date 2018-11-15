@@ -1,5 +1,5 @@
 TN:
-SF:D:\Workarea\tangle-frost\iota-qr-render\src\index.ts
+SF:D:\Workarea\iota.eco\tangle-frost\iota-qr-render\src\index.ts
 FNF:0
 FNH:0
 LF:0
@@ -8,7 +8,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:D:\Workarea\tangle-frost\iota-qr-render\src\initRender.ts
+SF:D:\Workarea\iota.eco\tangle-frost\iota-qr-render\src\initRender.ts
 FN:11,initRender
 FN:12,(anonymous_1)
 FN:13,(anonymous_2)
@@ -34,7 +34,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:D:\Workarea\tangle-frost\iota-qr-render\src\helpers\imageHelper.ts
+SF:D:\Workarea\iota.eco\tangle-frost\iota-qr-render\src\helpers\imageHelper.ts
 FN:13,(anonymous_0)
 FNF:1
 FNH:0
@@ -68,7 +68,7 @@ BRF:6
 BRH:0
 end_of_record
 TN:
-SF:D:\Workarea\tangle-frost\iota-qr-render\src\images\jpegEncoder.ts
+SF:D:\Workarea\iota.eco\tangle-frost\iota-qr-render\src\images\jpegEncoder.ts
 FN:124,(anonymous_0)
 FN:156,(anonymous_1)
 FN:252,(anonymous_2)
@@ -515,7 +515,7 @@ BRF:40
 BRH:33
 end_of_record
 TN:
-SF:D:\Workarea\tangle-frost\iota-qr-render\src\images\pngEncoder.ts
+SF:D:\Workarea\iota.eco\tangle-frost\iota-qr-render\src\images\pngEncoder.ts
 FN:15,(anonymous_1)
 FN:167,(anonymous_2)
 FN:182,(anonymous_3)
@@ -1313,7 +1313,7 @@ BRF:177
 BRH:40
 end_of_record
 TN:
-SF:D:\Workarea\tangle-frost\iota-qr-render\src\models\IQRRenderer.ts
+SF:D:\Workarea\iota.eco\tangle-frost\iota-qr-render\src\models\IQRRenderer.ts
 FNF:0
 FNH:0
 LF:0
@@ -1322,7 +1322,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:D:\Workarea\tangle-frost\iota-qr-render\src\renderTypes\jpegRenderer.ts
+SF:D:\Workarea\iota.eco\tangle-frost\iota-qr-render\src\renderTypes\jpegRenderer.ts
 FN:22,(anonymous_0)
 FN:44,(anonymous_1)
 FN:112,(anonymous_2)
@@ -1423,7 +1423,7 @@ BRF:28
 BRH:21
 end_of_record
 TN:
-SF:D:\Workarea\tangle-frost\iota-qr-render\src\renderTypes\pngRenderer.ts
+SF:D:\Workarea\iota.eco\tangle-frost\iota-qr-render\src\renderTypes\pngRenderer.ts
 FN:22,(anonymous_0)
 FN:44,(anonymous_1)
 FN:112,(anonymous_2)
@@ -1524,7 +1524,7 @@ BRF:28
 BRH:21
 end_of_record
 TN:
-SF:D:\Workarea\tangle-frost\iota-qr-render\src\renderTypes\svgRenderer.ts
+SF:D:\Workarea\iota.eco\tangle-frost\iota-qr-render\src\renderTypes\svgRenderer.ts
 FN:22,(anonymous_0)
 FN:63,(anonymous_1)
 FN:81,(anonymous_2)
@@ -1694,7 +1694,7 @@ BRF:61
 BRH:49
 end_of_record
 TN:
-SF:D:\Workarea\tangle-frost\iota-qr-render\src\renderTypes\textRenderer.ts
+SF:D:\Workarea\iota.eco\tangle-frost\iota-qr-render\src\renderTypes\textRenderer.ts
 FN:18,(anonymous_0)
 FN:32,(anonymous_1)
 FN:78,(anonymous_2)
