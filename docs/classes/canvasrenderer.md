@@ -77,7 +77,7 @@ ___
 
 ###  renderRaw
 
-▸ **renderRaw**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`< `Uint8Array` &#124; `string`>
+▸ **renderRaw**(cellData: *`QRCellData`*, cellSize?: *`number`*, marginSize?: *`number`*): `Promise`<`Uint8Array` | `string`>
 
 *Implementation of [IQRRenderer](../interfaces/iqrrenderer.md).[renderRaw](../interfaces/iqrrenderer.md#renderraw)*
 
@@ -93,7 +93,7 @@ Render the QR code data as an canvas.
 | `Default value` cellSize | `number` | 5 |  The size of each cell. |
 | `Default value` marginSize | `number` | 10 |  The margin to keep around the qr code. |
 
-**Returns:** `Promise`< `Uint8Array` &#124; `string`>
+**Returns:** `Promise`<`Uint8Array` | `string`>
 The SVG content.
 
 ___
