@@ -82,7 +82,7 @@ ___
 
 ### `<Optional>` foregroundType
 
-**● foregroundType**: *"solid" | "linear" | "radial"*
+**● foregroundType**: *"solid" \| "linear" \| "radial"*
 
 *Defined in [renderTypes/svgRendererOptions.ts:12](https://github.com/tangle-frost/iota-qr-render/tree/master/src/renderTypes/svgRendererOptions.ts#L12*
 
