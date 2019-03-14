@@ -44,7 +44,7 @@
 
 **Ƭ Frame**: *`object`*
 
-*Defined in [images/pngEncoder.ts:901](https://github.com/tangle-frost/iota-qr-render/tree/master/src/images/pngEncoder.ts#L901*
+*Defined in [images/pngEncoder.ts:902](https://github.com/tangle-frost/iota-qr-render/tree/master/src/images/pngEncoder.ts#L902*
 
 #### Type declaration
 
@@ -81,7 +81,7 @@ ___
 
 **Ƭ ImageData**: *`object`*
 
-*Defined in [images/pngEncoder.ts:933](https://github.com/tangle-frost/iota-qr-render/tree/master/src/images/pngEncoder.ts#L933*
+*Defined in [images/pngEncoder.ts:934](https://github.com/tangle-frost/iota-qr-render/tree/master/src/images/pngEncoder.ts#L934*
 
 #### Type declaration
 
@@ -102,7 +102,7 @@ ___
 
 **Ƭ Leaf**: *`object`*
 
-*Defined in [images/pngEncoder.ts:914](https://github.com/tangle-frost/iota-qr-render/tree/master/src/images/pngEncoder.ts#L914*
+*Defined in [images/pngEncoder.ts:915](https://github.com/tangle-frost/iota-qr-render/tree/master/src/images/pngEncoder.ts#L915*
 
 #### Type declaration
 

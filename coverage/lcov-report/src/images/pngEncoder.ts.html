@@ -985,7 +985,8 @@
 <a name='L937'></a><a href='#L937'>937</a>
 <a name='L938'></a><a href='#L938'>938</a>
 <a name='L939'></a><a href='#L939'>939</a>
-<a name='L940'></a><a href='#L940'>940</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L940'></a><a href='#L940'>940</a>
+<a name='L941'></a><a href='#L941'>941</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1469,6 +1470,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2408,7 +2410,8 @@ export class PngEncoder {
         const pc = <span class="cstat-no" title="statement not covered" >Math.abs(p - c);</span>
         if (pa &lt;= pb &amp;&amp; pa &lt;= pc) {
 <span class="cstat-no" title="statement not covered" >            return a;</span>
-        } else if (pb &lt;= pc) {
+        }
+        if (pb &lt;= pc) {
 <span class="cstat-no" title="statement not covered" >            return b;</span>
         }
 <span class="cstat-no" title="statement not covered" >        return c;</span>

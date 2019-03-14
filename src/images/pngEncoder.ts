@@ -482,7 +482,8 @@ export class PngEncoder {
         const pc = Math.abs(p - c);
         if (pa <= pb && pa <= pc) {
             return a;
-        } else if (pb <= pc) {
+        }
+        if (pb <= pc) {
             return b;
         }
         return c;
